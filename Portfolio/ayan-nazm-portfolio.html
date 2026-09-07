@@ -3,8 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayan Nazm — Data Analyst & Consultant</title>
+<title>Ayan Nazm — Data Analyst &amp; Consultant</title>
 <meta name="description" content="MSc Business Analytics (Warwick). Segmentation at BT, automation at HighRadius. SQL, Python, R, Tableau.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ayan Nazm — Data Analyst &amp; Consultant">
+<meta property="og:description" content="MSc Business Analytics (Warwick). B2B segmentation at BT, automation at HighRadius. SQL, Python, R, Tableau.">
+<meta property="og:image" content="assets/ayan-nazm.webp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ayan Nazm — Data Analyst &amp; Consultant">
+<meta name="twitter:description" content="MSc Business Analytics (Warwick). B2B segmentation at BT, automation at HighRadius. SQL, Python, R, Tableau.">
+<meta name="twitter:image" content="assets/ayan-nazm.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ayan Nazm",
+  "jobTitle": "Data Analyst & Consultant",
+  "url": "https://ayannazm.github.io",
+  "image": "assets/ayan-nazm.webp",
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Warwick Business School, University of Warwick"
+  },
+  "knowsAbout": [
+    "Data Analytics",
+    "B2B Customer Segmentation",
+    "Statistical Modeling",
+    "Machine Learning",
+    "SQL",
+    "Python",
+    "R",
+    "Tableau",
+    "ERP Automation"
+  ],
+  "sameAs": [
+    "https://github.com/ayannazm",
+    "https://linkedin.com/in/ayannazm"
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -85,9 +122,9 @@ body {
   font-feature-settings: "kern", "liga", "onum";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  /* Subtle paper grain — barely perceptible */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.015 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  background-size: 300px 300px;
+  /* Subtle paper grain — optimized 180px tile */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.012 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 a { color: var(--prussian); text-decoration: none; border-bottom: 1px solid currentColor; transition: color 0.2s; }
@@ -118,8 +155,11 @@ a:focus-visible { outline: 2px solid var(--sienna); outline-offset: 3px; border-
   gap: clamp(2rem, 5vw, 4.5rem);
 }
 @media (max-width: 880px) {
-  .shell { grid-template-columns: 1fr; gap: 0; }
-  .rail { position: static !important; }
+  .shell { grid-template-columns: 1fr; gap: 2.5rem; }
+  .rail { position: static !important; max-width: 100%; padding-right: 3rem; }
+  .rail-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.5rem 1rem; }
+  .rail-nav .label { grid-column: 1 / -1; margin-bottom: 0.25rem; }
+  .contact-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.4rem 1rem; }
 }
 
 /* ---------- Left rail (index + identity) ---------- */
@@ -335,7 +375,8 @@ section { display: flex; flex-direction: column; gap: 1.5rem; scroll-margin-top:
   padding: 1rem; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
   background: var(--parchment-2);
 }
-@media (max-width: 640px) { .impact-ribbon { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 680px) { .impact-ribbon { grid-template-columns: 1fr 1fr; gap: 0.85rem; } }
+@media (max-width: 400px) { .impact-ribbon { grid-template-columns: 1fr; gap: 0.85rem; } }
 .impact-ribbon .metric { display: flex; flex-direction: column; gap: 0.15rem; }
 .impact-ribbon .metric .val {
   font-family: var(--mono); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--ink);
@@ -444,10 +485,10 @@ footer {
       </p>
 
       <div class="impact-ribbon" aria-label="Quick impact stats">
-        <div class="metric"><span class="val">3+ yrs</span><span class="label">Consulting experience</span></div>
-        <div class="metric"><span class="val">98.2%</span><span class="label">Auto-match accuracy</span></div>
-        <div class="metric"><span class="val">MSc</span><span class="label">Business Analytics · Warwick</span></div>
-        <div class="metric"><span class="val">1st</span><span class="label">Emirates Challenge · WBS</span></div>
+        <div class="metric" aria-label="3+ years of consulting experience"><span class="val">3+ yrs</span><span class="label">Consulting experience</span></div>
+        <div class="metric" aria-label="98.2% auto-match accuracy"><span class="val">98.2%</span><span class="label">Auto-match accuracy</span></div>
+        <div class="metric" aria-label="MSc Business Analytics at Warwick"><span class="val">MSc</span><span class="label">Business Analytics · Warwick</span></div>
+        <div class="metric" aria-label="1st place Emirates Challenge at WBS"><span class="val">1st</span><span class="label">Emirates Challenge · WBS</span></div>
       </div>
     </section>
 
@@ -579,7 +620,7 @@ footer {
         <p>
           Led an end-to-end B2B segmentation study on a 1,102-respondent BT Business survey to improve upon blunt firmographic targeting. Reduced 80 behavioral items to 8 orthogonal factors via exploratory block-wise factor analysis. Evaluated Hierarchical, GMM, and K-Means clustering across multiple segment solutions, culminating in a highly stable 4-segment K-Means architecture validated through ablation testing and cross-tabulation.
         </p>
-        <div class="arch-diagram">R · Factor Analysis · K-Means · GMM · Hierarchical Clustering · Cross-tabulation</div>
+        <div class="arch-diagram" role="img" aria-label="Methodology flow: R, Factor Analysis, K-Means, GMM, Hierarchical Clustering, Cross-tabulation">R · Factor Analysis · K-Means · GMM · Hierarchical Clustering · Cross-tabulation</div>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
           <a class="proj-btn" href="#">View Analysis <span class="arrow" aria-hidden="true">→</span></a>
           <a class="proj-btn" href="#">GitHub <span class="arrow" aria-hidden="true">→</span></a>
@@ -597,7 +638,7 @@ footer {
         <p>
           Engineered a sophisticated Retrieval-Augmented Generation (RAG) pipeline to query over 3,000 pages of dense World Bank policy reports (2016–2025). Implemented FAISS dense vector search, BM25 sparse retrieval, Reciprocal Rank Fusion (RRF), Cross-Encoder reranking, and Hypothetical Document Embeddings (HyDE). Achieved a +0.40 lift in correctness and +0.10 in completeness over baseline dense retrieval evaluated via LLM-as-a-judge.
         </p>
-        <div class="arch-diagram">World Bank PDFs → Chunking → Dense (FAISS) + Sparse (BM25) → RRF Fusion → Cross-Encoder → LLM</div>
+        <div class="arch-diagram" role="img" aria-label="Pipeline: World Bank PDFs, Chunking, Dense FAISS and Sparse BM25, RRF Fusion, Cross-Encoder, LLM">World Bank PDFs → Chunking → Dense (FAISS) + Sparse (BM25) → RRF Fusion → Cross-Encoder → LLM</div>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
           <a class="proj-btn" href="#">View Analysis <span class="arrow" aria-hidden="true">→</span></a>
           <a class="proj-btn" href="#">GitHub <span class="arrow" aria-hidden="true">→</span></a>
@@ -615,7 +656,7 @@ footer {
         <p>
           Formulated and simulated Conservative vs. Aggressive lending policies on a LendingClub dataset. Executed statistical A/B testing (Welch Two-Sample t-test, p &lt; 2.2e-16), proving the growth-oriented policy generated +£298 profit per application despite higher default rates. Enhanced the risk assessment with an 11-feature K-Means clustering algorithm to uncover distinct borrower archetypes and modelled defaults using Deep Learning.
         </p>
-        <div class="arch-diagram">LendingClub Data → Policy A/B Simulation → K-Means Archetypes → Deep Learning Defaults → P&amp;L Analysis</div>
+        <div class="arch-diagram" role="img" aria-label="Workflow: LendingClub Data, Policy A/B Simulation, K-Means Archetypes, Deep Learning Defaults, P&amp;L Analysis">LendingClub Data → Policy A/B Simulation → K-Means Archetypes → Deep Learning Defaults → P&amp;L Analysis</div>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
           <a class="proj-btn" href="#">View Analysis <span class="arrow" aria-hidden="true">→</span></a>
           <a class="proj-btn" href="#">GitHub <span class="arrow" aria-hidden="true">→</span></a>
@@ -633,7 +674,7 @@ footer {
         <p>
           Built and benchmarked six ML classifiers (including XGBoost, LightGBM, SVM, and Random Forest) on a 100,000-record, 200-feature dataset to predict Universal Plus business credit applications. Addressed a severe 10/90 class imbalance and 40% missingness via median imputation, Information Gain feature selection, and embedded class-weighting, with XGBoost peaking at 0.861 AUC.
         </p>
-        <div class="arch-diagram">100K Records · 200 Features → Imputation → Feature Selection → 6 Classifiers → XGBoost 0.861 AUC</div>
+        <div class="arch-diagram" role="img" aria-label="Pipeline: 100K Records and 200 Features, Imputation, Feature Selection, 6 Classifiers, XGBoost 0.861 AUC">100K Records · 200 Features → Imputation → Feature Selection → 6 Classifiers → XGBoost 0.861 AUC</div>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
           <a class="proj-btn" href="#">View Analysis <span class="arrow" aria-hidden="true">→</span></a>
           <a class="proj-btn" href="#">GitHub <span class="arrow" aria-hidden="true">→</span></a>
@@ -651,7 +692,7 @@ footer {
         <p>
           Designed and implemented an end-to-end 3NF relational database for a boutique UK wealth management firm. Developed conceptual (Chen) and logical (Crow’s Foot) Entity-Relationship diagrams. Executed complex SQL ETL pipelines to report on AUM growth waterfalls, branch-level unrealised gains, advisor portfolio risk metrics, and fee schedule revenue optimisation.
         </p>
-        <div class="arch-diagram">Conceptual (Chen) → Logical (Crow’s Foot) → 3NF Schema → SQL ETL → AUM · Risk · Revenue Reports</div>
+        <div class="arch-diagram" role="img" aria-label="Architecture flow: Conceptual Chen, Logical Crow’s Foot, 3NF Schema, SQL ETL, AUM, Risk, and Revenue Reports">Conceptual (Chen) → Logical (Crow’s Foot) → 3NF Schema → SQL ETL → AUM · Risk · Revenue Reports</div>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
           <a class="proj-btn" href="#">View Analysis <span class="arrow" aria-hidden="true">→</span></a>
           <a class="proj-btn" href="#">GitHub <span class="arrow" aria-hidden="true">→</span></a>
@@ -669,7 +710,7 @@ footer {
         <p>
           Collaborated with Emirates Group executives on a live business challenge; led a 4-person winning team that earned a funded trip to Emirates HQ in Dubai. Designed <em>Runway to Rewards</em>, a gamified Skywards loyalty concept addressing the "360-day gap" between flights for Gen Z audiences using Nir Eyal’s Hook Model, daily micro-engagements, and a phased commercial rollout.
         </p>
-        <div class="arch-diagram">Emirates Challenge · 1st Place · Hook Model · Gen Z Loyalty · Gamified Micro-engagements</div>
+        <div class="arch-diagram" role="img" aria-label="Framework: Emirates Challenge 1st Place, Hook Model, Gen Z Loyalty, Gamified Micro-engagements">Emirates Challenge · 1st Place · Hook Model · Gen Z Loyalty · Gamified Micro-engagements</div>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
           <a class="proj-btn" href="#">Case Study <span class="arrow" aria-hidden="true">→</span></a>
         </div>
