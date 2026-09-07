@@ -372,11 +372,12 @@ section { display: flex; flex-direction: column; gap: 1.5rem; scroll-margin-top:
 
 /* ---------- Impact ribbon ---------- */
 .impact-ribbon {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.25rem;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.25rem;
   padding: 1rem; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
   background: var(--parchment-2);
 }
-@media (max-width: 680px) { .impact-ribbon { grid-template-columns: 1fr 1fr; gap: 0.85rem; } }
+@media (max-width: 680px) { .impact-ribbon { grid-template-columns: 1fr 1fr 1fr; gap: 0.85rem; } }
+@media (max-width: 520px) { .impact-ribbon { grid-template-columns: 1fr; gap: 0.85rem; } }
 @media (max-width: 400px) { .impact-ribbon { grid-template-columns: 1fr; gap: 0.85rem; } }
 .impact-ribbon .metric { display: flex; flex-direction: column; gap: 0.15rem; }
 .impact-ribbon .metric .val {
@@ -481,9 +482,8 @@ footer {
 
       <div class="impact-ribbon" aria-label="Quick impact stats">
         <div class="metric" aria-label="3+ years of consulting experience"><span class="val">3+ yrs</span><span class="label">Consulting experience</span></div>
-        <div class="metric" aria-label="98.2% auto-match accuracy"><span class="val">98.2%</span><span class="label">Auto-match accuracy</span></div>
-        <div class="metric" aria-label="MSc Business Analytics at Warwick"><span class="val">MSc</span><span class="label">Business Analytics · Warwick</span></div>
-        <div class="metric" aria-label="1st place Emirates Challenge at WBS"><span class="val">1st</span><span class="label">Emirates Challenge · WBS</span></div>
+        <div class="metric" aria-label="Data analyst specialist"><span class="val">Data Analyst</span><span class="label">Specialist — segmentation · automation · ERP</span></div>
+        <div class="metric" aria-label="MSc Business Analytics at Warwick Business School"><span class="val">MSc</span><span class="label">Business Analytics · Warwick Business School</span></div>
       </div>
     </section>
 
