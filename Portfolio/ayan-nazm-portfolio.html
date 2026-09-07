@@ -170,15 +170,16 @@ a:focus-visible { outline: 2px solid var(--sienna); outline-offset: 3px; border-
 }
 .brand { display: flex; flex-direction: column; gap: 0.6rem; }
 .avatar-wrap {
-  position: relative; width: 92px; height: 92px;
+  position: relative; width: 138px; height: 138px;
 }
 .avatar {
-  width: 92px; height: 92px; border-radius: 50%;
+  width: 138px; height: 138px; border-radius: 50%;
   object-fit: cover; object-position: center 20%;
   border: 2px solid var(--rule-strong);
-  box-shadow: 0 4px 14px rgba(14, 17, 22, 0.1);
+  box-shadow: 0 6px 20px rgba(14, 17, 22, 0.14), 0 2px 6px rgba(14, 17, 22, 0.08);
   background: var(--parchment-2);
   display: block;
+  filter: contrast(1.05) saturate(1.05);
 }
 .brand .monogram {
   font-family: var(--display);
@@ -437,7 +438,7 @@ footer {
   <aside class="rail" aria-label="Site navigation and identity">
     <div class="brand">
       <div class="avatar-wrap">
-        <img src="assets/ayan-nazm.webp" alt="Ayan Nazm" class="avatar" width="92" height="92"></div>
+        <img src="assets/ayan-nazm.webp" alt="Ayan Nazm" class="avatar" width="138" height="138"></div>
       <div class="monogram">Ayan Nazm</div>
       <div class="tagline">Data Analyst · Consultant</div>
     </div>
