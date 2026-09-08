@@ -1,0 +1,865 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayan Nazm — Data Analyst &amp; Consultant</title>
+<meta name="description" content="MSc Business Analytics (Warwick). Segmentation at BT, automation at HighRadius. SQL, Python, R, Tableau.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ayan Nazm — Data Analyst &amp; Consultant">
+<meta property="og:description" content="MSc Business Analytics (Warwick). B2B segmentation at BT, automation at HighRadius. SQL, Python, R, Tableau.">
+<meta property="og:image" content="assets/ayan-nazm.webp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ayan Nazm — Data Analyst &amp; Consultant">
+<meta name="twitter:description" content="MSc Business Analytics (Warwick). B2B segmentation at BT, automation at HighRadius. SQL, Python, R, Tableau.">
+<meta name="twitter:image" content="assets/ayan-nazm.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ayan Nazm",
+  "jobTitle": "Data Analyst & Consultant",
+  "url": "https://ayannazm.github.io",
+  "image": "assets/ayan-nazm.webp",
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Warwick Business School, University of Warwick"
+  },
+  "knowsAbout": [
+    "Data Analytics",
+    "B2B Customer Segmentation",
+    "Statistical Modeling",
+    "Machine Learning",
+    "SQL",
+    "Python",
+    "R",
+    "Tableau",
+    "ERP Automation"
+  ],
+  "sameAs": [
+    "https://github.com/ayannazm",
+    "https://linkedin.com/in/ayannazm"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ---------- Tokens (light = parchment) ---------- */
+:root {
+  --ink: #0E1116;
+  --ink-soft: #2A2F38;
+  --parchment: #F5F2EB;
+  --parchment-2: #EDE8DC;
+  --prussian: #1B3A5C;
+  --prussian-2: #2C547E;
+  --sienna: #A8421B;
+  --slate: #5C6675;
+  --slate-2: #8A93A0;
+  --bone: #D9D2C2;
+  --bone-2: #C4BBA6;
+  --rule: rgba(14, 17, 22, 0.12);
+  --rule-strong: rgba(14, 17, 22, 0.32);
+  --shadow: 0 1px 0 rgba(14, 17, 22, 0.04);
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+  --measure: 64ch;
+  --gutter: clamp(1.25rem, 3vw, 2rem);
+  --rail: 18rem;
+}
+
+/* Dark — deep inkwell */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #ECEAE3;
+    --ink-soft: #C9C4B8;
+    --parchment: #0E1116;
+    --parchment-2: #161A21;
+    --prussian: #7BA5CC;
+    --prussian-2: #A8C5DE;
+    --sienna: #D86A3C;
+    --slate: #8A93A0;
+    --slate-2: #5C6675;
+    --bone: #2A2F38;
+    --bone-2: #3A414C;
+    --rule: rgba(236, 234, 227, 0.10);
+    --rule-strong: rgba(236, 234, 227, 0.28);
+    --shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #ECEAE3;
+  --ink-soft: #C9C4B8;
+  --parchment: #0E1116;
+  --parchment-2: #161A21;
+  --prussian: #7BA5CC;
+  --prussian-2: #A8C5DE;
+  --sienna: #D86A3C;
+  --slate: #8A93A0;
+  --slate-2: #5C6675;
+  --bone: #2A2F38;
+  --bone-2: #3A414C;
+  --rule: rgba(236, 234, 227, 0.10);
+  --rule-strong: rgba(236, 234, 227, 0.28);
+  --shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  font-feature-settings: "kern", "liga", "onum";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  /* Subtle paper grain — optimized 180px tile */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.012 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+a { color: var(--prussian); text-decoration: none; border-bottom: 1px solid currentColor; transition: color 0.2s; }
+a:hover { color: var(--sienna); }
+a:focus-visible { outline: 2px solid var(--sienna); outline-offset: 3px; border-radius: 2px; }
+
+/* ---------- Theme toggle ---------- */
+.theme-toggle {
+  position: fixed; top: 1.25rem; right: 1.25rem; z-index: 100;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--parchment-2); color: var(--ink);
+  border: 1px solid var(--rule-strong); cursor: pointer;
+  display: grid; place-items: center;
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1), background-color 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.theme-toggle:active { transform: scale(0.92); }
+.theme-toggle:hover { background: var(--bone); }
+.theme-toggle:focus-visible { outline: 2px solid var(--sienna); outline-offset: 3px; }
+.theme-toggle svg { width: 18px; height: 18px; }
+
+/* ---------- Page shell ---------- */
+.shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem) var(--gutter) 4rem;
+  display: grid;
+  grid-template-columns: var(--rail) 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+@media (max-width: 880px) {
+  .shell { grid-template-columns: 1fr; gap: 2.5rem; }
+  .rail { position: static !important; max-width: 100%; padding-right: 3rem; }
+  .rail-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.5rem 1rem; }
+  .rail-nav .label { grid-column: 1 / -1; margin-bottom: 0.25rem; }
+  .contact-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.4rem 1rem; }
+}
+
+/* ---------- Left rail (index + identity) ---------- */
+.rail {
+  position: sticky; top: 2rem; align-self: start;
+  display: flex; flex-direction: column; gap: 2rem;
+  height: max-content;
+}
+.brand { display: flex; flex-direction: column; gap: 0.6rem; }
+.avatar-wrap {
+  position: relative; width: 138px; height: 138px;
+  animation: fadeUp 600ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+.avatar {
+  width: 138px; height: 138px; border-radius: 50%;
+  object-fit: cover; object-position: center 20%;
+  border: 2px solid var(--rule-strong);
+  box-shadow: 0 6px 20px rgba(14, 17, 22, 0.14), 0 2px 6px rgba(14, 17, 22, 0.08);
+  background: var(--parchment-2);
+  display: block;
+  filter: contrast(1.05) saturate(1.05);
+}
+.brand .monogram {
+  font-family: var(--display);
+  font-size: 1.75rem; font-weight: 500; letter-spacing: -0.02em;
+  line-height: 1.1; font-variation-settings: "opsz" 144;
+  margin-top: 0.25rem;
+}
+.brand .tagline {
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--slate); margin-top: 0.5rem;
+}
+
+.rail hr { border: 0; border-top: 1px solid var(--rule); }
+
+.rail-nav { display: flex; flex-direction: column; gap: 0.15rem; }
+.rail-nav .label {
+  font-family: var(--mono); font-size: 0.65rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.16em;
+  color: var(--slate-2); margin-bottom: 0.65rem;
+}
+.rail-nav a {
+  font-family: var(--body); font-size: 0.95rem; color: var(--ink-soft);
+  border: 0; padding: 0.25rem 0; display: flex; gap: 0.75rem; align-items: baseline;
+  transition: color 180ms cubic-bezier(0.23, 1, 0.32, 1), transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.rail-nav a .num {
+  font-family: var(--mono); font-size: 0.7rem; color: var(--slate-2); width: 1.5em;
+  font-variant-numeric: tabular-nums;
+  transition: color 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .rail-nav a:hover { color: var(--sienna); transform: translateX(3px); }
+  .rail-nav a:hover .num { color: var(--sienna); }
+}
+.rail-nav a[aria-current="true"] { color: var(--ink); font-weight: 600; }
+.rail-nav a[aria-current="true"] .num { color: var(--sienna); font-weight: 600; }
+
+.contact-list { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; }
+.contact-list .row { display: flex; gap: 0.5rem; align-items: baseline; }
+.contact-list .k {
+  font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase;
+  letter-spacing: 0.12em; color: var(--slate-2); width: 4.5em; flex-shrink: 0;
+}
+.contact-list .v { color: var(--ink-soft); }
+.contact-list a { color: var(--ink-soft); border: 0; }
+.contact-list a:hover { color: var(--sienna); }
+
+/* ---------- Main column ---------- */
+.main { display: flex; flex-direction: column; gap: clamp(3rem, 6vw, 5rem); }
+
+section {
+  display: flex; flex-direction: column; gap: 1.5rem; scroll-margin-top: 1.5rem;
+  transition: opacity 360ms cubic-bezier(0.23, 1, 0.32, 1), transform 360ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+@media (prefers-reduced-motion: no-preference) {
+  section.reveal-init {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  section.reveal-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section header — paper-TOC style */
+.sec-head { display: flex; flex-direction: column; gap: 0.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--rule-strong); }
+.sec-eyebrow {
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.18em; color: var(--sienna);
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.sec-eyebrow::before {
+  content: ""; display: inline-block; width: 1.5rem; height: 1px; background: currentColor;
+}
+.sec-title {
+  font-family: var(--display); font-weight: 500;
+  font-variation-settings: "opsz" 144;
+  font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.1;
+  letter-spacing: -0.02em; color: var(--ink); text-wrap: balance;
+}
+
+/* ---------- Hero / summary ---------- */
+.hero { gap: 1.5rem; padding-top: 0.5rem; }
+.hero h1 {
+  font-family: var(--display); font-weight: 400;
+  font-variation-settings: "opsz" 144;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.02; letter-spacing: -0.035em; color: var(--ink);
+  text-wrap: balance;
+}
+.hero h1 em {
+  font-style: italic; font-weight: 300; color: var(--prussian);
+  font-variation-settings: "opsz" 144;
+}
+.hero-lede {
+  font-family: var(--body); font-size: 1.15rem; line-height: 1.55;
+  color: var(--ink-soft); max-width: 56ch;
+}
+
+/* ---------- Education ---------- */
+.edu-item { padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+.edu-item:last-child { border-bottom: 0; }
+.edu-item .deg {
+  font-family: var(--display); font-size: 1.05rem; font-weight: 500;
+  color: var(--ink); line-height: 1.3; text-wrap: balance;
+}
+.edu-item .inst {
+  font-family: var(--body); font-size: 0.9rem; color: var(--prussian); margin-top: 0.2rem;
+}
+.edu-item .when {
+  font-family: var(--mono); font-size: 0.7rem; color: var(--slate);
+  text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.3rem;
+}
+
+/* ---------- Skills ---------- */
+.skill-group { display: flex; flex-direction: column; gap: 0.4rem; padding: 0.85rem 0; border-bottom: 1px solid var(--rule); }
+.skill-group:last-child { border-bottom: 0; }
+.skill-group .k {
+  font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase;
+  letter-spacing: 0.14em; color: var(--sienna); font-weight: 600;
+}
+.skill-group .v {
+  font-family: var(--body); font-size: 0.97rem; color: var(--ink-soft); line-height: 1.5;
+}
+
+/* ---------- Experience — timeline, not cards ---------- */
+.timeline { display: flex; flex-direction: column; }
+.entry {
+  display: grid; grid-template-columns: 9rem 1fr; gap: 1.5rem;
+  padding: 1.75rem 0; border-bottom: 1px solid var(--rule);
+}
+.entry:first-child { border-top: 1px solid var(--rule); }
+@media (max-width: 600px) {
+  .entry { grid-template-columns: 1fr; gap: 0.5rem; }
+}
+
+.entry .when {
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+  color: var(--slate); letter-spacing: 0.04em; line-height: 1.4;
+  text-transform: uppercase; padding-top: 0.35rem;
+}
+.entry .when .present { color: var(--sienna); }
+
+.entry .body { display: flex; flex-direction: column; gap: 0.5rem; }
+.entry .role {
+  font-family: var(--display); font-weight: 500;
+  font-variation-settings: "opsz" 60;
+  font-size: 1.25rem; line-height: 1.25; letter-spacing: -0.01em;
+  color: var(--ink); text-wrap: balance;
+}
+.entry .org {
+  font-family: var(--body); font-size: 0.95rem; color: var(--prussian);
+  font-weight: 500;
+}
+.entry .where {
+  font-family: var(--body); font-style: italic; font-size: 0.85rem; color: var(--slate);
+}
+.entry ul {
+  list-style: none; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.4rem;
+}
+.entry li {
+  font-size: 0.97rem; line-height: 1.55; color: var(--ink-soft);
+  padding-left: 1.5rem; position: relative;
+}
+.entry li::before {
+  content: ""; position: absolute; left: 0; top: 0.7em;
+  width: 0.85rem; height: 1px; background: var(--bone-2);
+}
+.entry li strong { color: var(--ink); font-weight: 600; }
+
+
+/* ---------- CTA / footer ---------- */
+.cta {
+  margin-top: 1rem; padding: 2rem; border: 1px solid var(--rule-strong);
+  background: var(--parchment-2);
+  display: flex; flex-direction: column; gap: 1rem; align-items: flex-start;
+  position: relative;
+}
+.cta::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--prussian), var(--sienna));
+}
+.cta h3 {
+  font-family: var(--display); font-weight: 500; font-size: 1.6rem;
+  line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); text-wrap: balance;
+}
+.cta p { color: var(--ink-soft); max-width: 52ch; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--mono); font-size: 0.8rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  background: var(--ink); color: var(--parchment);
+  border: 0; border-radius: 0; cursor: pointer;
+  transition: background 160ms cubic-bezier(0.23, 1, 0.32, 1), transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+  text-decoration: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn:active { transform: scale(0.97); }
+}
+.btn:hover { background: var(--sienna); color: var(--parchment); }
+.btn:focus-visible { outline: 2px solid var(--sienna); outline-offset: 3px; }
+.btn .arrow { transition: transform 0.2s; }
+.btn:hover .arrow { transform: translateX(3px); }
+
+/* ---------- Entrance animations ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  @keyframes fadeUp { from, to { opacity: 1; transform: none; } }
+}
+
+/* ---------- Impact ribbon ---------- */
+.impact-ribbon {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.25rem;
+  padding: 1rem; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  background: var(--parchment-2);
+}
+@media (max-width: 680px) { .impact-ribbon { grid-template-columns: 1fr 1fr; gap: 0.85rem; } }
+@media (max-width: 400px) { .impact-ribbon { grid-template-columns: 1fr; gap: 0.85rem; } }
+.impact-ribbon .metric {
+  display: flex; flex-direction: column; gap: 0.15rem;
+}
+.impact-ribbon .metric:nth-child(1) {
+  animation: fadeUp 450ms cubic-bezier(0.23, 1, 0.32, 1) 100ms both;
+}
+.impact-ribbon .metric:nth-child(2) {
+  animation: fadeUp 450ms cubic-bezier(0.23, 1, 0.32, 1) 180ms both;
+}
+.impact-ribbon .metric .val {
+  font-family: var(--mono); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--ink);
+}
+.impact-ribbon .metric .label {
+  font-family: var(--body); font-size: 0.82rem; color: var(--ink-soft); line-height: 1.3;
+}
+
+/* ---------- Skill chips ---------- */
+.skill-group .v { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.skill-chip {
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+  padding: 0.25rem 0.6rem; border: 1px solid var(--rule); border-radius: 2px;
+  background: var(--parchment); color: var(--ink-soft); letter-spacing: 0.01em;
+  transition: border-color 160ms cubic-bezier(0.23, 1, 0.32, 1), color 160ms cubic-bezier(0.23, 1, 0.32, 1), transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .skill-chip:hover {
+    border-color: var(--sienna);
+    color: var(--ink);
+    transform: translateY(-1px);
+  }
+}
+
+/* ---------- Experience differentiation ---------- */
+.entry--consulting { background: linear-gradient(180deg, rgba(44,80,120,0.03), rgba(44,80,120,0.00)); border-left: 3px solid var(--prussian); padding-left: 1.25rem; }
+.entry--consulting .org { color: var(--prussian); font-weight: 600; }
+.entry--retail { opacity: 0.82; border-left: 3px solid var(--bone-2); padding-left: 1.25rem; }
+.entry--retail .org { color: var(--slate); }
+.entry--consulting .badge, .entry--retail .badge { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.15rem 0.4rem; border: 1px solid var(--rule); border-radius: 2px; }
+
+/* ---------- Project cards ---------- */
+.project-card {
+  padding: 1.5rem; border: 1px solid var(--rule-strong); background: var(--parchment-2); border-radius: 2px;
+  display: flex; flex-direction: column; gap: 0.6rem;
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1), border-color 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(14, 17, 22, 0.08), 0 2px 6px rgba(14, 17, 22, 0.04);
+    border-color: var(--prussian-2);
+  }
+}
+.project-card .project-head { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: baseline; justify-content: space-between; }
+.project-card .title { font-family: var(--display); font-size: 1.2rem; font-weight: 500; color: var(--ink); letter-spacing: -0.01em; line-height: 1.25; }
+.project-card .when { font-family: var(--mono); font-size: 0.7rem; color: var(--slate); text-transform: uppercase; letter-spacing: 0.1em; }
+.project-card p { color: var(--ink-soft); font-size: 0.97rem; line-height: 1.55; max-width: 64ch; }
+.tech-tag { font-family: var(--mono); font-size: 0.68rem; padding: 0.2rem 0.45rem; border: 1px solid var(--rule); border-radius: 2px; background: var(--parchment); color: var(--slate); letter-spacing: 0.02em; }
+.proj-btn { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--mono); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.45rem 0.85rem; border: 1px solid var(--ink); background: var(--ink); color: var(--parchment); text-decoration: none; border-radius: 0; transition: background 160ms cubic-bezier(0.23, 1, 0.32, 1); }
+.proj-btn:hover { background: var(--sienna); border-color: var(--sienna); }
+.proj-btn .arrow { transition: transform 0.2s; }
+.proj-btn:hover .arrow { transform: translateX(3px); }
+.arch-diagram { margin-top: 0.75rem; padding: 1rem; border: 1px dashed var(--rule); background: var(--parchment); display: flex; align-items: center; justify-content: center; min-height: 6rem; font-family: var(--mono); font-size: 0.75rem; color: var(--slate); letter-spacing: 0.05em; text-align: center; }
+
+footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 2rem; padding-top: 1.5rem;
+  font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.14em; color: var(--slate-2);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+}
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+  </svg>
+</button>
+
+<div class="shell">
+
+  <!-- ============ LEFT RAIL ============ -->
+  <aside class="rail" aria-label="Site navigation and identity">
+    <div class="brand">
+      <div class="avatar-wrap">
+        <img src="assets/ayan-nazm.webp" alt="Ayan Nazm" class="avatar" width="138" height="138"></div>
+      <div class="monogram">Ayan Nazm</div>
+      <div class="tagline">Data Analyst · Consultant</div>
+    </div>
+
+    <hr>
+
+    <nav class="rail-nav" aria-label="Sections">
+      <div class="label">Index</div>
+      <a href="#summary"><span class="num">01</span> Summary</a>
+      <a href="#education"><span class="num">02</span> Education</a>
+      <a href="#skills"><span class="num">03</span> Skills</a>
+      <a href="#experience"><span class="num">04</span> Experience</a>
+      <a href="#projects"><span class="num">05</span> Projects</a>
+      <a href="#contact"><span class="num">06</span> Contact</a>
+    </nav>
+
+    <hr>
+
+    <div class="contact-list" aria-label="Contact details">
+      <div class="row"><span class="k">Based</span><span class="v">Coventry, UK</span></div>
+      <div class="row"><span class="k">Tel</span><a class="v" href="tel:+447584379180">07584 379180</a></div>
+      <div class="row"><span class="k">Email</span><a class="v" href="mailto:ayan4dreem71@gmail.com">ayan4dreem71@gmail.com</a></div>
+      <div class="row"><span class="k">In</span><a class="v" href="https://www.linkedin.com/in/ayannazm" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="row"><span class="k">Git</span><a class="v" href="https://github.com/ayannazm" target="_blank" rel="noopener">GitHub</a></div>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN COLUMN ============ -->
+  <main class="main">
+
+    <!-- 01 · Summary -->
+    <section id="summary" class="hero">
+      <h1>Translating data into <em>decisions</em> that move enterprise.</h1>
+      <p class="hero-lede">
+        Data analyst with 3+ years across SaaS automation, consulting and analytics. I combine a
+        technical foundation in SQL, Python, R and Tableau with a consulting track record at
+        HighRadius and British Telecom — turning complex datasets into commercially useful
+        recommendations for stakeholders, not just dashboards.
+      </p>
+
+      <div class="impact-ribbon" aria-label="Quick impact stats">
+        <div class="metric" aria-label="3+ Years Data Analyst and Consultant"><span class="val">3+ Yrs</span><span class="label">Data Analyst &amp; Consultant</span></div>
+        <div class="metric" aria-label="MSc Business Analytics at Warwick"><span class="val">MSc</span><span class="label">Business Analytics · Warwick</span></div>
+      </div>
+    </section>
+
+    <!-- 02 · Education -->
+    <section id="education" aria-labelledby="edu-h">
+      <header class="sec-head">
+        <div class="sec-eyebrow">02 — Education</div>
+        <h2 class="sec-title" id="edu-h">Academic foundations.</h2>
+      </header>
+
+      <div class="edu-item">
+        <div class="deg">MSc Business Analytics</div>
+        <div class="inst">Warwick Business School, Coventry, UK</div>
+        <div class="when">Sep 2025 – Sep 2026</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="deg">B.Tech, Electronics & Telecommunication Engineering</div>
+        <div class="inst">KiiT University, Bhubaneswar, India</div>
+        <div class="when">Jul 2018 – Jun 2022</div>
+      </div>
+    </section>
+
+    <!-- 03 · Skills -->
+    <section id="skills" aria-labelledby="skills-h">
+      <header class="sec-head">
+        <div class="sec-eyebrow">03 — Skills</div>
+        <h2 class="sec-title" id="skills-h">Functional, technical, and methodological.</h2>
+      </header>
+
+      <div class="skill-group">
+        <div class="k">Functional</div>
+        <div class="v"><span class="skill-chip">Data Analysis</span><span class="skill-chip">Business Process Mapping</span><span class="skill-chip">Requirements Gathering</span><span class="skill-chip">ERP Implementation</span><span class="skill-chip">UAT & Workshops</span><span class="skill-chip">Segmentation</span><span class="skill-chip">Stakeholder Mgmt</span><span class="skill-chip">Business Cases</span></div>
+      </div>
+
+      <div class="skill-group">
+        <div class="k">Data & Analytics</div>
+        <div class="v"><span class="skill-chip">SQL</span><span class="skill-chip">Python</span><span class="skill-chip">R</span><span class="skill-chip">Tableau</span><span class="skill-chip">Excel</span></div>
+      </div>
+
+      <div class="skill-group">
+        <div class="k">Platforms & ERP</div>
+        <div class="v"><span class="skill-chip">SAP</span><span class="skill-chip">Oracle</span><span class="skill-chip">SharePoint</span></div>
+      </div>
+
+      <div class="skill-group">
+        <div class="k">Methods</div>
+        <div class="v"><span class="skill-chip">Machine Learning</span><span class="skill-chip">CRISP-DM</span><span class="skill-chip">Clustering</span><span class="skill-chip">Dim Reduction</span><span class="skill-chip">Agile</span></div>
+      </div>
+    </section>
+
+    <!-- 04 · Experience -->
+    <section id="experience" aria-labelledby="exp-h">
+      <header class="sec-head">
+        <div class="sec-eyebrow">04 — Experience</div>
+        <h2 class="sec-title" id="exp-h">A consulting-led path through enterprise data.</h2>
+      </header>
+
+      <div class="timeline">
+
+        <article class="entry entry--consulting">
+          <div class="when">Mar 2026 –<br>Jul 2026</div>
+          <div class="body">
+            <div class="role">Segmentation Consultant</div>
+            <div class="org">British Telecom <span class="where">— London, UK · Dissertation project</span></div>
+            <ul>
+              <li>Moved BT Business's segmentation approach <strong>beyond firmographics</strong> to customer needs, behaviours and decision drivers, analysing a large-scale B2B survey dataset.</li>
+              <li>Developed and tested segmentation models using <strong>clustering and dimensionality-reduction techniques</strong> in R, within a CRISP-DM framework.</li>
+              <li>Translated segments into <strong>actionable recommendations</strong> for marketing, sales and product teams.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry entry--consulting">
+          <div class="when">Jan 2025 –<br>Jul 2025</div>
+          <div class="body">
+            <div class="role">Functional Consultant</div>
+            <div class="org">HighRadius Corporation <span class="where">— Hyderabad, India</span></div>
+            <ul>
+              <li>Achieved <strong>90%+ auto-match accuracy</strong> by leading end-to-end Cash Application implementations that automated invoice-to-payment reconciliation on client ERPs.</li>
+              <li>Cut process downtime <strong>30%</strong> by using SQL for performance monitoring, data validation and reconciliation-error tracking.</li>
+              <li>Drove system adoption by owning <strong>UAT execution and client-readiness workshops</strong>.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry entry--consulting">
+          <div class="when">Jul 2022 –<br>Dec 2024</div>
+          <div class="body">
+            <div class="role">Associate Data Analyst</div>
+            <div class="org">HighRadius Corporation <span class="where">— Hyderabad, India</span></div>
+            <ul>
+              <li>Lifted invoice-clearing by <strong>25%</strong> with customised Cash Application solutions integrated into client ERPs.</li>
+              <li>Optimised invoice matching logic using <strong>Python</strong> to cleanse remittance data and flag anomalies.</li>
+              <li>Reduced manual effort <strong>40%</strong> by collaborating with technical and client teams to design tailored automation workflows.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry entry--retail">
+          <div class="when">May 2026 –<br><span class="present">Present</span></div>
+          <div class="body">
+            <div class="role">Customer Assistant</div>
+            <div class="org">Marks & Spencer <span class="where">— Coventry, UK</span></div>
+            <ul>
+              <li>Delivered accurate, friendly customer service and till operations across high transaction volumes, resolving queries and discrepancies calmly while working flexibly within a team under pressure during peak trading periods.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 05 · Projects -->
+    <section id="projects" aria-labelledby="proj-h">
+      <header class="sec-head">
+        <div class="sec-eyebrow">05 — Projects & research</div>
+        <h2 class="sec-title" id="proj-h">Selected work outside the day job.</h2>
+      </header>
+
+      <article class="project-card">
+        <div class="project-head">
+          <div class="title">Needs-Based B2B Customer Segmentation for BT Business</div>
+          <div class="when">MSc Dissertation</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
+          <span class="tech-tag">R</span><span class="tech-tag">CRISP-DM</span><span class="tech-tag">K-Means</span><span class="tech-tag">Factor Analysis</span><span class="tech-tag">GMM</span><span class="tech-tag">Segmentation</span>
+        </div>
+        <p>
+          Led an end-to-end B2B segmentation study on a 1,102-respondent BT Business survey to improve upon blunt firmographic targeting. Reduced 80 behavioral items to 8 orthogonal factors via exploratory block-wise factor analysis. Evaluated Hierarchical, GMM, and K-Means clustering across multiple segment solutions, culminating in a highly stable 4-segment K-Means architecture validated through ablation testing and cross-tabulation.
+        </p>
+        <div class="arch-diagram" role="img" aria-label="Methodology flow: R, Factor Analysis, K-Means, GMM, Hierarchical Clustering, Cross-tabulation">R · Factor Analysis · K-Means · GMM · Hierarchical Clustering · Cross-tabulation</div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                    <a class="proj-btn" href="#">GitHub <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <div class="title">Hybrid RAG Architecture for World Bank Development Reports</div>
+          <div class="when">2026</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
+          <span class="tech-tag">Python</span><span class="tech-tag">FAISS</span><span class="tech-tag">BM25</span><span class="tech-tag">RRF</span><span class="tech-tag">Cross-Encoder</span><span class="tech-tag">HyDE</span><span class="tech-tag">LLM</span>
+        </div>
+        <p>
+          Engineered a sophisticated Retrieval-Augmented Generation (RAG) pipeline to query over 3,000 pages of dense World Bank policy reports (2016–2025). Implemented FAISS dense vector search, BM25 sparse retrieval, Reciprocal Rank Fusion (RRF), Cross-Encoder reranking, and Hypothetical Document Embeddings (HyDE). Achieved a +0.40 lift in correctness and +0.10 in completeness over baseline dense retrieval evaluated via LLM-as-a-judge.
+        </p>
+        <div class="arch-diagram" role="img" aria-label="Pipeline: World Bank PDFs, Chunking, Dense FAISS and Sparse BM25, RRF Fusion, Cross-Encoder, LLM">World Bank PDFs → Chunking → Dense (FAISS) + Sparse (BM25) → RRF Fusion → Cross-Encoder → LLM</div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                    <a class="proj-btn" href="#">GitHub <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <div class="title">Advanced Credit Risk Analytics &amp; A/B Policy Simulation</div>
+          <div class="when">2026</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
+          <span class="tech-tag">Python</span><span class="tech-tag">A/B Testing</span><span class="tech-tag">K-Means</span><span class="tech-tag">Deep Learning</span><span class="tech-tag">LendingClub</span>
+        </div>
+        <p>
+          Formulated and simulated Conservative vs. Aggressive lending policies on a LendingClub dataset. Executed statistical A/B testing (Welch Two-Sample t-test, p &lt; 2.2e-16), proving the growth-oriented policy generated +£298 profit per application despite higher default rates. Enhanced the risk assessment with an 11-feature K-Means clustering algorithm to uncover distinct borrower archetypes and modelled defaults using Deep Learning.
+        </p>
+        <div class="arch-diagram" role="img" aria-label="Workflow: LendingClub Data, Policy A/B Simulation, K-Means Archetypes, Deep Learning Defaults, P&amp;L Analysis">LendingClub Data → Policy A/B Simulation → K-Means Archetypes → Deep Learning Defaults → P&amp;L Analysis</div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                    <a class="proj-btn" href="#">GitHub <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <div class="title">Predictive ML for Business Lending — A CRISP-DM Case Study</div>
+          <div class="when">Apr – Aug 2026</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
+          <span class="tech-tag">Python</span><span class="tech-tag">XGBoost</span><span class="tech-tag">LightGBM</span><span class="tech-tag">SVM</span><span class="tech-tag">CRISP-DM</span><span class="tech-tag">AUC</span>
+        </div>
+        <p>
+          Built and benchmarked six ML classifiers (including XGBoost, LightGBM, SVM, and Random Forest) on a 100,000-record, 200-feature dataset to predict Universal Plus business credit applications. Addressed a severe 10/90 class imbalance and 40% missingness via median imputation, Information Gain feature selection, and embedded class-weighting, with XGBoost peaking at 0.861 AUC.
+        </p>
+        <div class="arch-diagram" role="img" aria-label="Pipeline: 100K Records and 200 Features, Imputation, Feature Selection, 6 Classifiers, XGBoost 0.861 AUC">100K Records · 200 Features → Imputation → Feature Selection → 6 Classifiers → XGBoost 0.861 AUC</div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                    <a class="proj-btn" href="#">GitHub <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <div class="title">Relational Database Architecture &amp; Analytics for Wealth Management</div>
+          <div class="when">2026</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
+          <span class="tech-tag">SQL</span><span class="tech-tag">3NF</span><span class="tech-tag">Chen ERD</span><span class="tech-tag">Crow’s Foot</span><span class="tech-tag">ETL</span>
+        </div>
+        <p>
+          Designed and implemented an end-to-end 3NF relational database for a boutique UK wealth management firm. Developed conceptual (Chen) and logical (Crow’s Foot) Entity-Relationship diagrams. Executed complex SQL ETL pipelines to report on AUM growth waterfalls, branch-level unrealised gains, advisor portfolio risk metrics, and fee schedule revenue optimisation.
+        </p>
+        <div class="arch-diagram" role="img" aria-label="Architecture flow: Conceptual Chen, Logical Crow’s Foot, 3NF Schema, SQL ETL, AUM, Risk, and Revenue Reports">Conceptual (Chen) → Logical (Crow’s Foot) → 3NF Schema → SQL ETL → AUM · Risk · Revenue Reports</div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                    <a class="proj-btn" href="#">GitHub <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <div class="title">Runway to Rewards — WBS Business Challenge with The Emirates Group</div>
+          <div class="when">Apr – Jun 2026</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
+          <span class="tech-tag">Business Strategy</span><span class="tech-tag">Hook Model</span><span class="tech-tag">Gen Z</span><span class="tech-tag">Loyalty</span>
+        </div>
+        <p>
+          Collaborated with Emirates Group executives on a live business challenge; led a 4-person winning team that earned a funded trip to Emirates HQ in Dubai. Designed <em>Runway to Rewards</em>, a gamified Skywards loyalty concept addressing the "360-day gap" between flights for Gen Z audiences using Nir Eyal’s Hook Model, daily micro-engagements, and a phased commercial rollout.
+        </p>
+        <div class="arch-diagram" role="img" aria-label="Framework: Emirates Challenge 1st Place, Hook Model, Gen Z Loyalty, Gamified Micro-engagements">Emirates Challenge · 1st Place · Hook Model · Gen Z Loyalty · Gamified Micro-engagements</div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        </div>
+      </article>
+    </section>
+
+    <!-- 06 · Contact -->
+    <section id="contact" aria-labelledby="contact-h">
+      <header class="sec-head">
+        <div class="sec-eyebrow">06 — Get in touch</div>
+        <h2 class="sec-title" id="contact-h">Open to data, analytics & consulting roles.</h2>
+      </header>
+
+      <div class="cta">
+        <h3>If you're hiring for analytics, segmentation, or ERP-led automation — let's talk.</h3>
+        <p>Available for full-time roles and selective consulting. I respond quickly, and I bring receipts.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;">
+          <a class="btn" href="mailto:ayan4dreem71@gmail.com">
+            Email Ayan <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn" href="assets/Ayan_Nazm_CV.pdf" download>
+            Download CV (PDF) <span class="arrow" aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <footer>
+        <span>© 2026 Ayan Nazm</span>
+        <span>Coventry, UK</span>
+      </footer>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Theme toggle with persistence and dynamic SVG icon switching
+  (function () {
+    const btn = document.getElementById('themeToggle');
+    const sunIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>';
+    const moonIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+
+    const getPreferredTheme = () => {
+      try {
+        const stored = localStorage.getItem('theme');
+        if (stored) return stored;
+      } catch (e) {}
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    const updateThemeUI = (theme) => {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (theme === 'dark') {
+        btn.innerHTML = sunIcon;
+        btn.setAttribute('aria-label', 'Switch to light mode');
+        btn.setAttribute('title', 'Switch to light mode');
+      } else {
+        btn.innerHTML = moonIcon;
+        btn.setAttribute('aria-label', 'Switch to dark mode');
+        btn.setAttribute('title', 'Switch to dark mode');
+      }
+    };
+
+    const initialTheme = getPreferredTheme();
+    updateThemeUI(initialTheme);
+
+    btn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme') || initialTheme;
+      const next = cur === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      updateThemeUI(next);
+    });
+
+    // Section-aware nav highlighting and scroll-reveal
+    const sections = document.querySelectorAll('main section[id]');
+    const links = document.querySelectorAll('.rail-nav a[href^="#"]');
+    const setCurrent = (id) => {
+      links.forEach(l => l.setAttribute('aria-current', l.getAttribute('href') === '#' + id ? 'true' : 'false'));
+    };
+    if ('IntersectionObserver' in window) {
+      // Setup nav highlighting
+      const navObs = new IntersectionObserver((entries) => {
+        const visible = entries.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (visible) setCurrent(visible.target.id);
+      }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
+
+      // Setup scroll reveal logic
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealObs = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('reveal-init');
+            entry.target.classList.add('reveal-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
+
+      sections.forEach((s, idx) => {
+        navObs.observe(s);
+        if (!prefersReducedMotion && idx > 0) {
+          s.classList.add('reveal-init');
+          revealObs.observe(s);
+        }
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
