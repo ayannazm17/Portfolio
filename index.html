@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ayan Nazm — Data Analyst &amp; Consultant</title>
-<meta name="description" content="Data analyst with three years in B2B FinTech (HighRadius) and an MSc in Business Analytics from Warwick. SQL, Python, R, Tableau.">
+<meta name="description" content="Data analyst with three years in B2B FinTech (HighRadius) and an MSc in Business Analytics from Warwick. SQL, Python, R, Power BI.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ayan Nazm — Data Analyst &amp; Consultant">
-<meta property="og:description" content="Data analyst with three years in B2B FinTech (HighRadius) and an MSc in Business Analytics from Warwick. SQL, Python, R, Tableau.">
+<meta property="og:description" content="Data analyst with three years in B2B FinTech (HighRadius) and an MSc in Business Analytics from Warwick. SQL, Python, R, Power BI.">
 <meta property="og:image" content="https://ayannazm17.github.io/Portfolio/assets/ayan-nazm.webp">
 <meta property="og:image:alt" content="Portrait of Ayan Nazm">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ayan Nazm — Data Analyst &amp; Consultant">
-<meta name="twitter:description" content="Data analyst with three years in B2B FinTech (HighRadius) and an MSc in Business Analytics from Warwick. SQL, Python, R, Tableau.">
+<meta name="twitter:description" content="Data analyst with three years in B2B FinTech (HighRadius) and an MSc in Business Analytics from Warwick. SQL, Python, R, Power BI.">
 <meta name="twitter:image" content="https://ayannazm17.github.io/Portfolio/assets/ayan-nazm.webp">
 <meta name="twitter:image:alt" content="Portrait of Ayan Nazm">
 <script type="application/ld+json">
@@ -35,7 +35,7 @@
     "SQL",
     "Python",
     "R",
-    "Tableau",
+    "Power BI",
     "ERP Automation"
   ],
   "sameAs": [
@@ -340,6 +340,7 @@ section {
   font-family: var(--body); font-size: 0.95rem; color: var(--prussian);
   font-weight: 500;
 }
+.entry .sub { font-size: 0.85rem; color: var(--slate); }
 .entry .where {
   font-family: var(--body); font-style: italic; font-size: 0.85rem; color: var(--slate);
 }
@@ -467,6 +468,7 @@ section {
 .proj-btn .arrow { transition: transform 0.2s; }
 .proj-btn:hover .arrow { transform: translateX(3px); }
 .project-card .result { color: var(--ink); font-size: 1rem; }
+.project-card .caption { font-family: var(--mono); font-size: 0.68rem; color: var(--slate); margin-top: -0.25rem; }
 .project-card .tech { font-family: var(--mono); font-size: 0.72rem; color: var(--slate); letter-spacing: 0.02em; margin-top: 0.25rem; }
 .project-card .proj-links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.25rem; }
 .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 1rem; }
@@ -476,7 +478,7 @@ section {
 @media (max-width: 600px) { .proj-grid--featured .project-card { padding: 1.5rem; } }
 .proj-group { display: flex; flex-direction: column; gap: 0.75rem; }
 .proj-group.is-empty { display: none; }
-.proj-group-label, .other-work .k {
+.proj-group-label {
   font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase;
   letter-spacing: 0.14em; color: var(--sienna); font-weight: 600;
 }
@@ -499,10 +501,6 @@ section {
 .more-toggle[aria-expanded="true"]::after { content: " 2"; }
 .filter-status { font-family: var(--mono); font-size: 0.7rem; color: var(--slate); min-height: 1em; margin-top: -0.75rem; }
 
-/* ---------- Other work ---------- */
-.other-work { display: flex; flex-direction: column; gap: 0.3rem; padding-left: calc(1.25rem + 3px); color: var(--ink-soft); font-size: 0.92rem; }
-.other-work .ow-role { font-family: var(--display); font-weight: 500; color: var(--ink); }
-.other-work .ow-when { font-family: var(--mono); font-size: 0.7rem; color: var(--slate); text-transform: uppercase; letter-spacing: 0.08em; margin-left: 0.5rem; }
 .arch-diagram { margin-top: 0.75rem; padding: 1rem; border: 1px dashed var(--rule); background: var(--parchment); display: flex; align-items: center; justify-content: center; min-height: 6rem; font-family: var(--mono); font-size: 0.75rem; color: var(--slate); letter-spacing: 0.05em; text-align: center; }
 
 footer {
@@ -563,8 +561,8 @@ footer {
     <section id="summary" class="hero">
       <h1>Turning financial data into <em>decisions</em> people act on.</h1>
       <p class="hero-lede">
-        Data analyst with three years in B2B FinTech at HighRadius and an MSc in Business
-        Analytics from Warwick. I work on reconciliation, credit risk and customer segmentation,
+        Data analyst with three years in B2B FinTech at HighRadius, where I worked with 50+ clients
+        on invoice and payment data, and an MSc in Business Analytics from Warwick. I work on reconciliation, credit risk and customer segmentation,
         using SQL, Python and R, and I write the recommendation as well as the code.
       </p>
 
@@ -578,7 +576,7 @@ footer {
       </div>
 
       <div class="impact-ribbon" aria-label="Quick impact stats">
-        <div class="metric" aria-label="3 Years in B2B FinTech at HighRadius"><span class="val">3 Yrs</span><span class="label">B2B FinTech, HighRadius</span></div>
+        <div class="metric" aria-label="3 years, 50+ clients, B2B FinTech"><span class="val">3 Yrs</span><span class="label">50+ clients, B2B FinTech</span></div>
         <div class="metric" aria-label="MSc Business Analytics at Warwick"><span class="val">MSc</span><span class="label">Business Analytics · Warwick</span></div>
       </div>
     </section>
@@ -593,13 +591,13 @@ footer {
       <div class="edu-item">
         <div class="deg">MSc Business Analytics</div>
         <div class="inst">Warwick Business School, Coventry, UK</div>
-        <div class="when">Sep 2025 – Sep 2026</div>
+        <div class="when">Sep 2025 – Sep 2026 · Expected: Merit</div>
       </div>
 
       <div class="edu-item">
         <div class="deg">B.Tech, Electronics & Telecommunication Engineering</div>
         <div class="inst">KiiT University, Bhubaneswar, India</div>
-        <div class="when">Jul 2018 – Jun 2022</div>
+        <div class="when">Jul 2018 – Jun 2022 · CGPA 8+/10</div>
       </div>
     </section>
 
@@ -612,7 +610,7 @@ footer {
 
       <div class="skill-group">
         <div class="k">Tools (12)</div>
-        <div class="v"><span class="skill-chip">SQL</span><span class="skill-chip">Python</span><span class="skill-chip">R</span><span class="skill-chip">Tableau</span><span class="skill-chip">Excel</span><span class="skill-chip">Power Apps</span><span class="skill-chip">Power Automate</span><span class="skill-chip">SharePoint</span><span class="skill-chip">SAP</span><span class="skill-chip">Oracle</span><span class="skill-chip">Pyomo</span><span class="skill-chip">Git</span></div>
+        <div class="v"><span class="skill-chip">SQL</span><span class="skill-chip">Python</span><span class="skill-chip">R</span><span class="skill-chip">Power BI</span><span class="skill-chip">Excel</span><span class="skill-chip">Power Apps</span><span class="skill-chip">Power Automate</span><span class="skill-chip">SharePoint</span><span class="skill-chip">SAP</span><span class="skill-chip">Oracle</span><span class="skill-chip">Pyomo</span><span class="skill-chip">Git</span></div>
       </div>
 
       <div class="skill-group">
@@ -657,6 +655,7 @@ footer {
           <div class="when">Jul 2022 –<br>Jul 2025</div>
           <div class="body">
             <div class="org">HighRadius Corporation, B2B FinTech <span class="where">· Hyderabad, India</span></div>
+            <div class="sub">50+ clients; client AR files typically 100,000+ records.</div>
             <div class="role">Functional Consultant <span class="where">Jan 2025 – Jul 2025</span></div>
             <ul>
               <li>Led end-to-end Cash Application implementations on client ERPs, reaching 90%+ auto-match accuracy on invoice-to-payment reconciliation.</li>
@@ -666,18 +665,12 @@ footer {
             <div class="role">Associate Data Analyst <span class="where">Jul 2022 – Dec 2024</span></div>
             <ul>
               <li>Built customised Cash Application solutions integrated into client ERPs, lifting invoice clearing by 25%.</li>
-              <li>Cleansed remittance data and flagged anomalies in Python to tighten invoice-matching logic.</li>
+              <li>Cleansed remittance data and flagged anomalies in Python on client AR files typically 100,000+ records long, tightening invoice-matching logic.</li>
               <li>Designed automation workflows with technical and client teams, cutting manual effort by 40%.</li>
             </ul>
           </div>
         </article>
 
-      </div>
-
-      <div class="other-work">
-        <div class="k">Other work</div>
-        <p><span class="ow-role">Customer Assistant, Marks &amp; Spencer</span> <span class="ow-when">May 2026 – present</span></p>
-        <p>Customer service and till operations across high transaction volumes, resolving queries and discrepancies calmly in peak trading periods.</p>
       </div>
     </section>
 
@@ -705,9 +698,9 @@ footer {
               <h3 class="title">Credit risk: lending policy A/B test, borrower clustering and default prediction</h3>
               <div class="when">Group project (6)</div>
             </div>
-            <p class="result">An aggressive lending policy earned £298 more profit per application than a conservative one, despite defaults 3.3 points higher (16.05% vs 12.79%).</p>
+            <p class="result">An aggressive lending policy earned $298 more profit per application than a conservative one, despite defaults 3.3 points higher (16.05% vs 12.79%).</p>
             <ul>
-              <li>Simulated both policies on LendingClub loan data and tested the gap with a Welch t-test (p &lt; 0.001). Segmented borrowers with K-Means on 11 features (k = 3); the aggressive policy won in every cluster, by £521.60 per application in the highest-risk one.</li>
+              <li>Simulated both policies on LendingClub loan data and tested the gap with a Welch t-test (p &lt; 0.001). Segmented borrowers with K-Means on 11 features (k = 3); the aggressive policy won in every cluster, by $521.60 per application in the highest-risk one.</li>
               <li>Built a neural network that predicts defaults at ROC-AUC 0.68 on 8,417 unseen loans, where a cluster-average baseline has no discrimination within a segment (AUC 0.50).</li>
               <li>Recommended a segmented, hybrid policy, with reject inference and a live pilot before rollout. Results are correlational because the data holds approved loans only.</li>
             </ul>
@@ -720,11 +713,11 @@ footer {
               <h3 class="title">Needs-based B2B segmentation for BT Business</h3>
               <div class="when">MSc dissertation</div>
             </div>
-            <p class="result">Built a needs-based segmentation of BT Business's UK customers to replace targeting by size and sector, from a BT-commissioned survey of 1,102 businesses. One of three linked dissertations.</p>
+            <p class="result">Built a needs-based segmentation of BT Business's UK customers to replace targeting by size and sector, using a BT-commissioned survey of around 1,100 businesses. One of three linked dissertations.</p>
             <ul>
-              <li>Reduced 80 survey items to eight factor scores with block-wise factor analysis, after a single pooled analysis failed sampling-adequacy checks (KMO 0.153).</li>
-              <li>Compared Ward's hierarchical, K-means and Gaussian mixture clustering across nine candidates and recommended a four-segment K-means solution. It held when the two weakest inputs were dropped (ARI 0.776) and when clustered on all 80 raw items (ARI 0.718).</li>
-              <li>Segments differed significantly by firm size, sector, turnover and site count although none entered the model. Added a decision-tree assignment rule (76.8% agreement with the clustering, tested on the same sample) and function-level recommendations, with segment names left for BT to validate.</li>
+              <li>Reduced roughly 80 survey items to eight factor scores with block-wise factor analysis, after a single pooled analysis proved unsuitable.</li>
+              <li>Compared three clustering methods across nine candidate solutions and recommended a four-segment K-means solution. It held up when the weakest inputs were removed and when clustered on the raw items.</li>
+              <li>Segments differed significantly by firm size, sector and turnover although none entered the model. Added a decision-tree rule that assigns customers to segments with roughly three-quarters agreement (tested on the same sample) and function-level recommendations, with segment names left for BT to validate.</li>
             </ul>
             <div class="tech">R · Factor analysis · K-means · GMM · Hierarchical clustering</div>
           </article>
@@ -771,11 +764,11 @@ footer {
             </div>
             <p class="result">Reallocating a 300-generator fleet across 1, 4, 8 and 16-week rentals lifts modelled revenue by £466,430 (10%) with no price changes.</p>
             <ul>
-              <li>Built a linear programme that raises load factor from 73.4% to 79.1% and ROI from 5.17 to 5.69, cutting idle-capacity weeks from 39 to 11 of 52.</li>
+              <li>Built a linear programme in Python that raises load factor from 73.4% to 79.1% and ROI from 5.17 to 5.69, cutting idle-capacity weeks from 39 to 11 of 52.</li>
               <li>Proposed using its shadow prices (up to £672.70 per generator in week 37) as booking bid prices. A 16-week rental starting in week 24 earns £5,734 against £4,780 of opportunity cost, so it would be accepted.</li>
               <li>Limits: one branch, a model-based projection, and no customer data to confirm the price-sensitivity assumptions.</li>
             </ul>
-            <div class="tech">Linear programming · Revenue management · Capacity allocation</div>
+            <div class="tech">Python · Linear programming · Revenue management · Capacity allocation</div>
           </article>
 
           <article class="project-card" data-roles="business">
@@ -783,9 +776,10 @@ footer {
               <h3 class="title">Runway to Rewards: WBS x Emirates Group challenge</h3>
               <div class="when">Team of 4 (led)</div>
             </div>
-            <p class="result">Led a four-person team to first place in a live Emirates Group challenge, winning a funded trip to Emirates HQ in Dubai.</p>
+            <p class="result">Led a four-person team to first place among nine teams in a live Emirates Group challenge, winning a funded trip to Emirates HQ in Dubai.</p>
             <ul>
-              <li>Framed the "360-day gap" between flights for Gen Z Skywards members.</li>
+              <li>Entries were judged on how practically the concept could be implemented in Emirates' existing app.</li>
+              <li>Framed the '360-day gap' between flights for Gen Z Skywards members.</li>
               <li>Proposed Runway to Rewards, a gamified micro-engagement concept built on the Hook Model, with a phased commercial rollout.</li>
             </ul>
             <div class="tech">Strategy · Hook Model · Loyalty</div>
@@ -818,14 +812,15 @@ footer {
             <div class="project-head">
               <h3 class="title">Hybrid RAG for World Bank reports</h3>
             </div>
-            <p class="result">Hybrid retrieval, reranking and query rewriting beat a dense-retrieval baseline across ten World Development Reports (2016 to 2025), raising correctness by 0.40 and completeness by 0.10, while citation grounding fell from 3.80 to 3.10.</p>
+            <p class="result">Hybrid retrieval, reranking and query rewriting raised retrieval relevance from 0.70 to 0.84 across ten World Development Reports (2016 to 2025). LLM-judge scores for the answers did not improve.</p>
             <ul>
-              <li>Fused FAISS and BM25 with Reciprocal Rank Fusion (k = 60), reranked the top 20 with a cross-encoder and rewrote queries with HyDE.</li>
-              <li>Scored both pipelines on 10 test queries with an LLM judge on a 1 to 5 scale. In one 2016 query the baseline returned chunks from 2018, 2020 and 2025, while the enhanced pipeline returned only 2016 content.</li>
-              <li>Found the enhanced pipeline sometimes invented page numbers; proposed metadata filtering and defensive prompting.</li>
+              <li>Indexed 4,589 chunks from 2,854 pages. Fused FAISS and BM25 results with Reciprocal Rank Fusion, reranked the top 20 with a cross-encoder to a top 5 and rewrote queries with HyDE.</li>
+              <li>Tested both pipelines on 10 queries of four types. Relevance improved on four and was unchanged on the rest. For a question about the 2016 report, the baseline returned no 2016 chunks, while the enhanced pipeline returned four of five.</li>
+              <li>Judge scores (1 to 5): correctness 4.5 for both, completeness 4.9 vs 4.8, grounding 3.8 vs 3.3. The judge saw only a truncated excerpt of the context, so I treat the grounding result as unreliable and would rerun it with the full context.</li>
             </ul>
             <div class="tech">Python · FAISS · BM25 · Cross-encoder · HyDE · Gemini</div>
             <div class="arch-diagram" role="img" aria-label="Pipeline: World Bank PDFs, chunking, dense FAISS plus sparse BM25 retrieval, RRF, cross-encoder, LLM">World Bank PDFs → Chunking → Dense (FAISS) + Sparse (BM25) → RRF → Cross-encoder → LLM</div>
+            <p class="caption">Relevance is a keyword-overlap heuristic.</p>
             <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Hybrid-RAG-System-for-the-World-Bank-World-Development-Reports" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
           </article>
 
