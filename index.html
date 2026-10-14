@@ -693,21 +693,6 @@ footer {
         <div class="proj-group-label">Start here</div>
         <div class="proj-grid proj-grid--featured">
 
-          <article class="project-card" data-roles="analytics data-science business">
-            <div class="project-head">
-              <h3 class="title">Credit risk: lending policy A/B test, borrower clustering and default prediction</h3>
-              <div class="when">Group project (6)</div>
-            </div>
-            <p class="result">An aggressive lending policy earned $298 more profit per application than a conservative one, despite defaults 3.3 points higher (16.05% vs 12.79%).</p>
-            <ul>
-              <li>Simulated both policies on LendingClub loan data and tested the gap with a Welch t-test (p &lt; 0.001). Segmented borrowers with K-Means on 11 features (k = 3); the aggressive policy won in every cluster, by $521.60 per application in the highest-risk one.</li>
-              <li>Built a neural network that predicts defaults at ROC-AUC 0.68 on 8,417 unseen loans, where a cluster-average baseline has no discrimination within a segment (AUC 0.50).</li>
-              <li>Recommended a segmented, hybrid policy, with reject inference and a live pilot before rollout. Results are correlational because the data holds approved loans only.</li>
-            </ul>
-            <div class="tech">Python · A/B testing · K-Means · Deep learning · SMOTE</div>
-            <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Credit-Risk-Analytics" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
-          </article>
-
           <article class="project-card" data-roles="data-science business">
             <div class="project-head">
               <h3 class="title">Needs-based B2B segmentation for BT Business</h3>
@@ -720,6 +705,20 @@ footer {
               <li>Segments differed significantly by firm size, sector and turnover although none entered the model. Added a decision-tree rule that assigns customers to segments with roughly three-quarters agreement (tested on the same sample) and function-level recommendations, with segment names left for BT to validate.</li>
             </ul>
             <div class="tech">R · Factor analysis · K-means · GMM · Hierarchical clustering</div>
+          </article>
+
+          <article class="project-card" data-roles="analytics data-science business">
+            <div class="project-head">
+              <h3 class="title">Credit risk: lending policy A/B test, borrower clustering and default prediction</h3>
+            </div>
+            <p class="result">An aggressive lending policy earned $298 more profit per application than a conservative one, despite defaults 3.3 points higher (16.05% vs 12.79%).</p>
+            <ul>
+              <li>Simulated both policies on LendingClub loan data and tested the gap with a Welch t-test (p &lt; 0.001). Segmented borrowers with K-Means on 11 features (k = 3); the aggressive policy won in every cluster, by $521.60 per application in the highest-risk one.</li>
+              <li>Built a neural network that predicts defaults at ROC-AUC 0.68 on 8,417 unseen loans, where a cluster-average baseline has no discrimination within a segment (AUC 0.50).</li>
+              <li>Recommended a segmented, hybrid policy, with reject inference and a live pilot before rollout. Results are correlational because the data holds approved loans only.</li>
+            </ul>
+            <div class="tech">Python · A/B testing · K-Means · Deep learning · SMOTE</div>
+            <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Credit-Risk-Analytics" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
           </article>
 
           <article class="project-card" data-roles="analytics business">
@@ -760,7 +759,6 @@ footer {
           <article class="project-card" data-roles="business analytics">
             <div class="project-head">
               <h3 class="title">PowerLease: revenue management model</h3>
-              <div class="when">Group project</div>
             </div>
             <p class="result">Reallocating a 300-generator fleet across 1, 4, 8 and 16-week rentals lifts modelled revenue by £466,430 (10%) with no price changes.</p>
             <ul>
@@ -796,7 +794,7 @@ footer {
           <article class="project-card" data-roles="analytics business">
             <div class="project-head">
               <h3 class="title">Wealth management database</h3>
-              <div class="when">Group project (6), MSc case study, fictional firm and synthetic data</div>
+              <div class="when">MSc case study, fictional firm and synthetic data</div>
             </div>
             <p class="result">Implemented a 14-table MySQL database and generated the synthetic dataset behind a team analysis of £967M AUM, up from £452M.</p>
             <ul>
@@ -827,7 +825,6 @@ footer {
           <article class="project-card" data-roles="data-science business">
             <div class="project-head">
               <h3 class="title">2026 World Cup scheduling</h3>
-              <div class="when">Group project (5)</div>
             </div>
             <p class="result">An integer-programming model cut the strength gap between World Cup groups to 87 FIFA points, against 500 in the confirmed groups of the official draw.</p>
             <ul>
