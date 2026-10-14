@@ -4,23 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ayan Nazm — Data Analyst &amp; Consultant</title>
-<meta name="description" content="MSc Business Analytics (Warwick). Segmentation at BT, automation at HighRadius. SQL, Python, R, Tableau.">
+<meta name="description" content="Data analyst with three years in B2B FinTech (HighRadius) and an MSc in Business Analytics from Warwick. SQL, Python, R, Power BI.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ayan Nazm — Data Analyst &amp; Consultant">
-<meta property="og:description" content="MSc Business Analytics (Warwick). B2B segmentation at BT, automation at HighRadius. SQL, Python, R, Tableau.">
-<meta property="og:image" content="assets/ayan-nazm.webp">
+<meta property="og:description" content="Data analyst with three years in B2B FinTech (HighRadius) and an MSc in Business Analytics from Warwick. SQL, Python, R, Power BI.">
+<meta property="og:image" content="https://ayannazm17.github.io/Portfolio/assets/ayan-nazm.webp">
+<meta property="og:image:alt" content="Portrait of Ayan Nazm">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ayan Nazm — Data Analyst &amp; Consultant">
-<meta name="twitter:description" content="MSc Business Analytics (Warwick). B2B segmentation at BT, automation at HighRadius. SQL, Python, R, Tableau.">
-<meta name="twitter:image" content="assets/ayan-nazm.webp">
+<meta name="twitter:description" content="Data analyst with three years in B2B FinTech (HighRadius) and an MSc in Business Analytics from Warwick. SQL, Python, R, Power BI.">
+<meta name="twitter:image" content="https://ayannazm17.github.io/Portfolio/assets/ayan-nazm.webp">
+<meta name="twitter:image:alt" content="Portrait of Ayan Nazm">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Ayan Nazm",
   "jobTitle": "Data Analyst & Consultant",
-  "url": "https://ayannazm.github.io",
-  "image": "assets/ayan-nazm.webp",
+  "url": "https://ayannazm17.github.io/Portfolio/",
+  "image": "https://ayannazm17.github.io/Portfolio/assets/ayan-nazm.webp",
   "alumniOf": {
     "@type": "EducationalOrganization",
     "name": "Warwick Business School, University of Warwick"
@@ -28,12 +30,12 @@
   "knowsAbout": [
     "Data Analytics",
     "B2B Customer Segmentation",
-    "Statistical Modeling",
+    "Statistical Modelling",
     "Machine Learning",
     "SQL",
     "Python",
     "R",
-    "Tableau",
+    "Power BI",
     "ERP Automation"
   ],
   "sameAs": [
@@ -107,6 +109,7 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -337,17 +340,18 @@ section {
   font-family: var(--body); font-size: 0.95rem; color: var(--prussian);
   font-weight: 500;
 }
+.entry .sub { font-size: 0.85rem; color: var(--slate); }
 .entry .where {
   font-family: var(--body); font-style: italic; font-size: 0.85rem; color: var(--slate);
 }
-.entry ul {
+.entry ul, .project-card ul {
   list-style: none; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.4rem;
 }
-.entry li {
+.entry li, .project-card li {
   font-size: 0.97rem; line-height: 1.55; color: var(--ink-soft);
   padding-left: 1.5rem; position: relative;
 }
-.entry li::before {
+.entry li::before, .project-card li::before {
   content: ""; position: absolute; left: 0; top: 0.7em;
   width: 0.85rem; height: 1px; background: var(--bone-2);
 }
@@ -440,9 +444,7 @@ section {
 /* ---------- Experience differentiation ---------- */
 .entry--consulting { background: linear-gradient(180deg, rgba(44,80,120,0.03), rgba(44,80,120,0.00)); border-left: 3px solid var(--prussian); padding-left: 1.25rem; }
 .entry--consulting .org { color: var(--prussian); font-weight: 600; }
-.entry--retail { opacity: 0.82; border-left: 3px solid var(--bone-2); padding-left: 1.25rem; }
-.entry--retail .org { color: var(--slate); }
-.entry--consulting .badge, .entry--retail .badge { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.15rem 0.4rem; border: 1px solid var(--rule); border-radius: 2px; }
+.entry--consulting .badge { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.15rem 0.4rem; border: 1px solid var(--rule); border-radius: 2px; }
 
 /* ---------- Project cards ---------- */
 .project-card {
@@ -461,11 +463,44 @@ section {
 .project-card .title { font-family: var(--display); font-size: 1.2rem; font-weight: 500; color: var(--ink); letter-spacing: -0.01em; line-height: 1.25; }
 .project-card .when { font-family: var(--mono); font-size: 0.7rem; color: var(--slate); text-transform: uppercase; letter-spacing: 0.1em; }
 .project-card p { color: var(--ink-soft); font-size: 0.97rem; line-height: 1.55; max-width: 64ch; }
-.tech-tag { font-family: var(--mono); font-size: 0.68rem; padding: 0.2rem 0.45rem; border: 1px solid var(--rule); border-radius: 2px; background: var(--parchment); color: var(--slate); letter-spacing: 0.02em; }
 .proj-btn { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--mono); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.45rem 0.85rem; border: 1px solid var(--ink); background: var(--ink); color: var(--parchment); text-decoration: none; border-radius: 0; transition: background 160ms cubic-bezier(0.23, 1, 0.32, 1); }
 .proj-btn:hover { background: var(--sienna); border-color: var(--sienna); }
 .proj-btn .arrow { transition: transform 0.2s; }
 .proj-btn:hover .arrow { transform: translateX(3px); }
+.project-card .result { color: var(--ink); font-size: 1rem; }
+.project-card .caption { font-family: var(--mono); font-size: 0.68rem; color: var(--slate); margin-top: -0.25rem; }
+.project-card .tech { font-family: var(--mono); font-size: 0.72rem; color: var(--slate); letter-spacing: 0.02em; margin-top: 0.25rem; }
+.project-card .proj-links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.25rem; }
+.proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 1rem; }
+.proj-grid--featured { grid-template-columns: 1fr; }
+.proj-grid--featured .project-card { padding: 2rem; border-color: var(--prussian-2); }
+.proj-grid--featured .project-card .title { font-size: 1.45rem; }
+@media (max-width: 600px) { .proj-grid--featured .project-card { padding: 1.5rem; } }
+.proj-group { display: flex; flex-direction: column; gap: 0.75rem; }
+.proj-group.is-empty { display: none; }
+.proj-group-label {
+  font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase;
+  letter-spacing: 0.14em; color: var(--sienna); font-weight: 600;
+}
+
+/* ---------- Project filters and More work toggle ---------- */
+.filter-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.filter-chip, .more-toggle {
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.02em;
+  min-height: 2.5rem; padding: 0.4rem 0.9rem; border: 1px solid var(--rule-strong); border-radius: 2px;
+  background: var(--parchment); color: var(--ink-soft); cursor: pointer;
+  transition: border-color 160ms cubic-bezier(0.23, 1, 0.32, 1), background 160ms cubic-bezier(0.23, 1, 0.32, 1), color 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.filter-chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--parchment); }
+@media (hover: hover) and (pointer: fine) {
+  .filter-chip:hover, .more-toggle:hover { border-color: var(--sienna); }
+}
+.filter-chip:focus-visible, .more-toggle:focus-visible { outline: 2px solid var(--sienna); outline-offset: 3px; }
+.more-toggle { align-self: flex-start; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
+.more-toggle::after { content: " +"; }
+.more-toggle[aria-expanded="true"]::after { content: " 2"; }
+.filter-status { font-family: var(--mono); font-size: 0.7rem; color: var(--slate); min-height: 1em; margin-top: -0.75rem; }
+
 .arch-diagram { margin-top: 0.75rem; padding: 1rem; border: 1px dashed var(--rule); background: var(--parchment); display: flex; align-items: center; justify-content: center; min-height: 6rem; font-family: var(--mono); font-size: 0.75rem; color: var(--slate); letter-spacing: 0.05em; text-align: center; }
 
 footer {
@@ -492,7 +527,7 @@ footer {
   <aside class="rail" aria-label="Site navigation and identity">
     <div class="brand">
       <div class="avatar-wrap">
-        <img src="assets/ayan-nazm.webp" alt="Ayan Nazm" class="avatar" width="138" height="138"></div>
+        <img src="assets/ayan-nazm.webp" alt="Portrait of Ayan Nazm" class="avatar" width="138" height="138"></div>
       <div class="monogram">Ayan Nazm</div>
       <div class="tagline">Data Analyst · Consultant</div>
     </div>
@@ -513,7 +548,6 @@ footer {
 
     <div class="contact-list" aria-label="Contact details">
       <div class="row"><span class="k">Based</span><span class="v">Coventry, UK</span></div>
-      <div class="row"><span class="k">Tel</span><a class="v" href="tel:+447584379180">07584 379180</a></div>
       <div class="row"><span class="k">Email</span><a class="v" href="mailto:ayannazm2712@gmail.com">ayannazm2712@gmail.com</a></div>
       <div class="row"><span class="k">In</span><a class="v" href="https://www.linkedin.com/in/ayannazm" target="_blank" rel="noopener">LinkedIn</a></div>
       <div class="row"><span class="k">Git</span><a class="v" href="https://github.com/ayannazm17" target="_blank" rel="noopener">GitHub</a></div>
@@ -525,16 +559,24 @@ footer {
 
     <!-- 01 · Summary -->
     <section id="summary" class="hero">
-      <h1>Translating data into <em>decisions</em> that move enterprise.</h1>
+      <h1>Turning financial data into <em>decisions</em> people act on.</h1>
       <p class="hero-lede">
-        Data analyst with 3+ years across SaaS automation, consulting and analytics. I combine a
-        technical foundation in SQL, Python, R and Tableau with a consulting track record at
-        HighRadius and British Telecom — turning complex datasets into commercially useful
-        recommendations for stakeholders, not just dashboards.
+        Data analyst with three years in B2B FinTech at HighRadius, where I worked with 50+ clients
+        on invoice and payment data, and an MSc in Business Analytics from Warwick. I work on reconciliation, credit risk and customer segmentation,
+        using SQL, Python and R, and I write the recommendation as well as the code.
       </p>
 
+      <div class="hero-actions" style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;">
+        <a class="btn" href="assets/Ayan_Resume.pdf" download>
+          Download CV (PDF) <span class="arrow" aria-hidden="true">↓</span>
+        </a>
+        <a class="btn" href="mailto:ayannazm2712@gmail.com">
+          Email Ayan <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
       <div class="impact-ribbon" aria-label="Quick impact stats">
-        <div class="metric" aria-label="3+ Years Data Analyst and Consultant"><span class="val">3+ Yrs</span><span class="label">Data Analyst &amp; Consultant</span></div>
+        <div class="metric" aria-label="3 years, 50+ clients, B2B FinTech"><span class="val">3 Yrs</span><span class="label">50+ clients, B2B FinTech</span></div>
         <div class="metric" aria-label="MSc Business Analytics at Warwick"><span class="val">MSc</span><span class="label">Business Analytics · Warwick</span></div>
       </div>
     </section>
@@ -542,101 +584,89 @@ footer {
     <!-- 02 · Education -->
     <section id="education" aria-labelledby="edu-h">
       <header class="sec-head">
-        <div class="sec-eyebrow">02 — Education</div>
+        <div class="sec-eyebrow">02 · Education</div>
         <h2 class="sec-title" id="edu-h">Academic foundations.</h2>
       </header>
 
       <div class="edu-item">
         <div class="deg">MSc Business Analytics</div>
         <div class="inst">Warwick Business School, Coventry, UK</div>
-        <div class="when">Sep 2025 – Sep 2026</div>
+        <div class="when">Sep 2025 – Sep 2026 · Expected: Merit</div>
       </div>
 
       <div class="edu-item">
         <div class="deg">B.Tech, Electronics & Telecommunication Engineering</div>
         <div class="inst">KiiT University, Bhubaneswar, India</div>
-        <div class="when">Jul 2018 – Jun 2022</div>
+        <div class="when">Jul 2018 – Jun 2022 · CGPA 8+/10</div>
       </div>
     </section>
 
     <!-- 03 · Skills -->
     <section id="skills" aria-labelledby="skills-h">
       <header class="sec-head">
-        <div class="sec-eyebrow">03 — Skills</div>
+        <div class="sec-eyebrow">03 · Skills</div>
         <h2 class="sec-title" id="skills-h">Functional, technical, and methodological.</h2>
       </header>
 
       <div class="skill-group">
-        <div class="k">Functional Competencies (8)</div>
-        <div class="v"><span class="skill-chip">Data Analysis</span><span class="skill-chip">Business Process Mapping</span><span class="skill-chip">Requirements Gathering</span><span class="skill-chip">ERP Implementation</span><span class="skill-chip">UAT & Workshops</span><span class="skill-chip">Segmentation</span><span class="skill-chip">Stakeholder Management</span><span class="skill-chip">Business Case Development</span></div>
+        <div class="k">Tools (12)</div>
+        <div class="v"><span class="skill-chip">SQL</span><span class="skill-chip">Python</span><span class="skill-chip">R</span><span class="skill-chip">Power BI</span><span class="skill-chip">Excel</span><span class="skill-chip">Power Apps</span><span class="skill-chip">Power Automate</span><span class="skill-chip">SharePoint</span><span class="skill-chip">SAP</span><span class="skill-chip">Oracle</span><span class="skill-chip">Pyomo</span><span class="skill-chip">Git</span></div>
       </div>
 
       <div class="skill-group">
-        <div class="k">Data (9)</div>
-        <div class="v"><span class="skill-chip">Machine Learning</span><span class="skill-chip">CRISP-DM</span><span class="skill-chip">Clustering (K-Means, GMM, Hierarchical)</span><span class="skill-chip">Dimensionality Reduction (Factor Analysis)</span><span class="skill-chip">Optimization / Integer Programming</span><span class="skill-chip">Statistical Testing</span><span class="skill-chip">Predictive Modelling (XGBoost, LightGBM, SVM, Random Forest, Deep Learning)</span><span class="skill-chip">Feature Engineering</span><span class="skill-chip">RAG stack (FAISS, BM25, RRF, Cross-Encoder, HyDE)</span></div>
+        <div class="k">Methods (9)</div>
+        <div class="v"><span class="skill-chip">Statistical testing</span><span class="skill-chip">A/B testing</span><span class="skill-chip">Clustering (K-Means, GMM, hierarchical)</span><span class="skill-chip">Factor analysis</span><span class="skill-chip">Predictive modelling (logistic regression, XGBoost, LightGBM, neural networks)</span><span class="skill-chip">Optimisation (linear and integer programming)</span><span class="skill-chip">CRISP-DM</span><span class="skill-chip">RAG (FAISS, BM25, RRF, cross-encoder, HyDE)</span><span class="skill-chip">Database design (3NF)</span></div>
       </div>
 
       <div class="skill-group">
-        <div class="k">Tools (8)</div>
-        <div class="v"><span class="skill-chip">SQL</span><span class="skill-chip">Python</span><span class="skill-chip">R</span><span class="skill-chip">Tableau</span><span class="skill-chip">Excel</span><span class="skill-chip">SAP</span><span class="skill-chip">Oracle</span><span class="skill-chip">Pyomo</span></div>
+        <div class="k">Domain (9)</div>
+        <div class="v"><span class="skill-chip">FinTech</span><span class="skill-chip">Order-to-cash</span><span class="skill-chip">Cash application</span><span class="skill-chip">Accounts receivable</span><span class="skill-chip">Credit risk</span><span class="skill-chip">Lending</span><span class="skill-chip">Revenue management</span><span class="skill-chip">Customer segmentation</span><span class="skill-chip">Wealth management</span></div>
+      </div>
+
+      <div class="skill-group">
+        <div class="k">Functional (7)</div>
+        <div class="v"><span class="skill-chip">Business process mapping</span><span class="skill-chip">Requirements gathering</span><span class="skill-chip">ERP implementation</span><span class="skill-chip">UAT and workshops</span><span class="skill-chip">Stakeholder management</span><span class="skill-chip">Business case development</span><span class="skill-chip">Data analysis</span></div>
       </div>
     </section>
 
     <!-- 04 · Experience -->
     <section id="experience" aria-labelledby="exp-h">
       <header class="sec-head">
-        <div class="sec-eyebrow">04 — Experience</div>
+        <div class="sec-eyebrow">04 · Experience</div>
         <h2 class="sec-title" id="exp-h">A consulting-led path through enterprise data.</h2>
       </header>
 
       <div class="timeline">
 
         <article class="entry entry--consulting">
-          <div class="when">Mar 2026 –<br>Jul 2026</div>
+          <div class="when">May 2026 –<br>Sep 2026</div>
           <div class="body">
-            <div class="role">Segmentation Consultant</div>
-            <div class="org">British Telecom <span class="where">— London, UK · Dissertation project</span></div>
+            <div class="role">Research Intern</div>
+            <div class="org">Gillmore Centre for Financial Technology, Warwick Business School <span class="where">· Coventry, UK</span></div>
             <ul>
-              <li>Moved BT Business's segmentation approach <strong>beyond firmographics</strong> to customer needs, behaviours and decision drivers, analysing a large-scale B2B survey dataset.</li>
-              <li>Developed and tested segmentation models using <strong>clustering and dimensionality-reduction techniques</strong> in R, within a CRISP-DM framework.</li>
-              <li>Translated segments into <strong>actionable recommendations</strong> for marketing, sales and product teams.</li>
+              <li>Built the Project Manager Dashboard in Power Apps for the centre's internship platform, replacing an email-driven process with one place to post listings, review applicants and move them through five status stages.</li>
+              <li>Automated the data flow with Power Automate and SharePoint, writing a timestamped audit row for every status change.</li>
+              <li>Set up role-based access that checks the signed-in Warwick account against a staff list, inside existing Microsoft 365 licences at no extra cost.</li>
             </ul>
           </div>
         </article>
 
         <article class="entry entry--consulting">
-          <div class="when">Jan 2025 –<br>Jul 2025</div>
+          <div class="when">Jul 2022 –<br>Jul 2025</div>
           <div class="body">
-            <div class="role">Functional Consultant</div>
-            <div class="org">HighRadius Corporation <span class="where">— Hyderabad, India</span></div>
+            <div class="org">HighRadius Corporation, B2B FinTech <span class="where">· Hyderabad, India</span></div>
+            <div class="sub">50+ clients; client AR files typically 100,000+ records.</div>
+            <div class="role">Functional Consultant <span class="where">Jan 2025 – Jul 2025</span></div>
             <ul>
-              <li>Achieved <strong>90%+ auto-match accuracy</strong> by leading end-to-end Cash Application implementations that automated invoice-to-payment reconciliation on client ERPs.</li>
-              <li>Cut process downtime <strong>30%</strong> by using SQL for performance monitoring, data validation and reconciliation-error tracking.</li>
-              <li>Drove system adoption by owning <strong>UAT execution and client-readiness workshops</strong>.</li>
+              <li>Led end-to-end Cash Application implementations on client ERPs, reaching 90%+ auto-match accuracy on invoice-to-payment reconciliation.</li>
+              <li>Used SQL for performance monitoring, validation and reconciliation-error tracking, cutting process downtime by 30%.</li>
+              <li>Ran UAT and client-readiness workshops that drove system adoption.</li>
             </ul>
-          </div>
-        </article>
-
-        <article class="entry entry--consulting">
-          <div class="when">Jul 2022 –<br>Dec 2024</div>
-          <div class="body">
-            <div class="role">Associate Data Analyst</div>
-            <div class="org">HighRadius Corporation <span class="where">— Hyderabad, India</span></div>
+            <div class="role">Associate Data Analyst <span class="where">Jul 2022 – Dec 2024</span></div>
             <ul>
-              <li>Lifted invoice-clearing by <strong>25%</strong> with customised Cash Application solutions integrated into client ERPs.</li>
-              <li>Optimised invoice matching logic using <strong>Python</strong> to cleanse remittance data and flag anomalies.</li>
-              <li>Reduced manual effort <strong>40%</strong> by collaborating with technical and client teams to design tailored automation workflows.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="entry entry--retail">
-          <div class="when">May 2026 –<br><span class="present">Present</span></div>
-          <div class="body">
-            <div class="role">Customer Assistant</div>
-            <div class="org">Marks & Spencer <span class="where">— Coventry, UK</span></div>
-            <ul>
-              <li>Delivered accurate, friendly customer service and till operations across high transaction volumes, resolving queries and discrepancies calmly while working flexibly within a team under pressure during peak trading periods.</li>
+              <li>Built customised Cash Application solutions integrated into client ERPs, lifting invoice clearing by 25%.</li>
+              <li>Cleansed remittance data and flagged anomalies in Python on client AR files typically 100,000+ records long, tightening invoice-matching logic.</li>
+              <li>Designed automation workflows with technical and client teams, cutting manual effort by 40%.</li>
             </ul>
           </div>
         </article>
@@ -647,138 +677,182 @@ footer {
     <!-- 05 · Projects -->
     <section id="projects" aria-labelledby="proj-h">
       <header class="sec-head">
-        <div class="sec-eyebrow">05 — Projects & research</div>
+        <div class="sec-eyebrow">05 · Projects &amp; research</div>
         <h2 class="sec-title" id="proj-h">Selected work outside the day job.</h2>
       </header>
 
-      <article class="project-card">
-        <div class="project-head">
-          <div class="title">Needs-Based B2B Customer Segmentation for BT Business</div>
-          <div class="when">MSc Dissertation</div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
-          <span class="tech-tag">R</span><span class="tech-tag">CRISP-DM</span><span class="tech-tag">K-Means</span><span class="tech-tag">Factor Analysis</span><span class="tech-tag">GMM</span><span class="tech-tag">Segmentation</span>
-        </div>
-        <p>
-          Led an end-to-end B2B segmentation study on a 1,102-respondent BT Business survey to improve upon blunt firmographic targeting. Reduced 80 behavioral items to 8 orthogonal factors via exploratory block-wise factor analysis. Evaluated Hierarchical, GMM, and K-Means clustering across multiple segment solutions, culminating in a highly stable 4-segment K-Means architecture validated through ablation testing and cross-tabulation.
-        </p>
-        <div class="arch-diagram" role="img" aria-label="Methodology flow: R, Factor Analysis, K-Means, GMM, Hierarchical Clustering, Cross-tabulation">R · Factor Analysis · K-Means · GMM · Hierarchical Clustering · Cross-tabulation</div>
-        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-        </div>
-      </article>
+      <div class="filter-chips" role="group" aria-label="Filter projects by role">
+        <button type="button" class="filter-chip" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-chip" data-filter="analytics" aria-pressed="false">Analytics</button>
+        <button type="button" class="filter-chip" data-filter="data-science" aria-pressed="false">Data science</button>
+        <button type="button" class="filter-chip" data-filter="business" aria-pressed="false">Business and consulting</button>
+      </div>
+      <p class="filter-status" id="filterStatus" aria-live="polite"></p>
 
-      <article class="project-card">
-        <div class="project-head">
-          <div class="title">Hybrid RAG Architecture for World Bank Development Reports</div>
-          <div class="when">2026</div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
-          <span class="tech-tag">Python</span><span class="tech-tag">FAISS</span><span class="tech-tag">BM25</span><span class="tech-tag">RRF</span><span class="tech-tag">Cross-Encoder</span><span class="tech-tag">HyDE</span><span class="tech-tag">LLM</span>
-        </div>
-        <p>
-          Engineered a sophisticated Retrieval-Augmented Generation (RAG) pipeline to query over 3,000 pages of dense World Bank policy reports (2016–2025). Implemented FAISS dense vector search, BM25 sparse retrieval, Reciprocal Rank Fusion (RRF), Cross-Encoder reranking, and Hypothetical Document Embeddings (HyDE). Achieved a +0.40 lift in correctness and +0.10 in completeness over baseline dense retrieval evaluated via LLM-as-a-judge.
-        </p>
-        <div class="arch-diagram" role="img" aria-label="Pipeline: World Bank PDFs, Chunking, Dense FAISS and Sparse BM25, RRF Fusion, Cross-Encoder, LLM">World Bank PDFs → Chunking → Dense (FAISS) + Sparse (BM25) → RRF Fusion → Cross-Encoder → LLM</div>
-        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-                    <a class="proj-btn" href="https://github.com/ayannazm17/Hybrid-RAG-System-for-the-World-Bank-World-Development-Reports" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-      </article>
+      <div class="proj-group" data-group>
+        <div class="proj-group-label">Start here</div>
+        <div class="proj-grid proj-grid--featured">
 
-      <article class="project-card">
-        <div class="project-head">
-          <div class="title">Advanced Credit Risk Analytics &amp; A/B Policy Simulation</div>
-          <div class="when">2026</div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
-          <span class="tech-tag">Python</span><span class="tech-tag">A/B Testing</span><span class="tech-tag">K-Means</span><span class="tech-tag">Deep Learning</span><span class="tech-tag">LendingClub</span>
-        </div>
-        <p>
-          Formulated and simulated Conservative vs. Aggressive lending policies on a LendingClub dataset. Executed statistical A/B testing (Welch Two-Sample t-test, p &lt; 2.2e-16), proving the growth-oriented policy generated +£298 profit per application despite higher default rates. Enhanced the risk assessment with an 11-feature K-Means clustering algorithm to uncover distinct borrower archetypes and modelled defaults using Deep Learning.
-        </p>
-        <div class="arch-diagram" role="img" aria-label="Workflow: LendingClub Data, Policy A/B Simulation, K-Means Archetypes, Deep Learning Defaults, P&amp;L Analysis">LendingClub Data → Policy A/B Simulation → K-Means Archetypes → Deep Learning Defaults → P&amp;L Analysis</div>
-        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-                    <a class="proj-btn" href="https://github.com/ayannazm17/Credit-Risk-Analytics" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-      </article>
+          <article class="project-card" data-roles="analytics data-science business">
+            <div class="project-head">
+              <h3 class="title">Credit risk: lending policy A/B test, borrower clustering and default prediction</h3>
+              <div class="when">Group project (6)</div>
+            </div>
+            <p class="result">An aggressive lending policy earned $298 more profit per application than a conservative one, despite defaults 3.3 points higher (16.05% vs 12.79%).</p>
+            <ul>
+              <li>Simulated both policies on LendingClub loan data and tested the gap with a Welch t-test (p &lt; 0.001). Segmented borrowers with K-Means on 11 features (k = 3); the aggressive policy won in every cluster, by $521.60 per application in the highest-risk one.</li>
+              <li>Built a neural network that predicts defaults at ROC-AUC 0.68 on 8,417 unseen loans, where a cluster-average baseline has no discrimination within a segment (AUC 0.50).</li>
+              <li>Recommended a segmented, hybrid policy, with reject inference and a live pilot before rollout. Results are correlational because the data holds approved loans only.</li>
+            </ul>
+            <div class="tech">Python · A/B testing · K-Means · Deep learning · SMOTE</div>
+            <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Credit-Risk-Analytics" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
+          </article>
 
-      <article class="project-card">
-        <div class="project-head">
-          <div class="title">Predictive ML for Business Lending — A CRISP-DM Case Study</div>
-          <div class="when">Apr – Aug 2026</div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
-          <span class="tech-tag">Python</span><span class="tech-tag">XGBoost</span><span class="tech-tag">LightGBM</span><span class="tech-tag">SVM</span><span class="tech-tag">CRISP-DM</span><span class="tech-tag">AUC</span>
-        </div>
-        <p>
-          Built and benchmarked six ML classifiers (including XGBoost, LightGBM, SVM, and Random Forest) on a 100,000-record, 200-feature dataset to predict Universal Plus business credit applications. Addressed a severe 10/90 class imbalance and 40% missingness via median imputation, Information Gain feature selection, and embedded class-weighting, with XGBoost peaking at 0.861 AUC.
-        </p>
-        <div class="arch-diagram" role="img" aria-label="Pipeline: 100K Records and 200 Features, Imputation, Feature Selection, 6 Classifiers, XGBoost 0.861 AUC">100K Records · 200 Features → Imputation → Feature Selection → 6 Classifiers → XGBoost 0.861 AUC</div>
-        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-                    <a class="proj-btn" href="https://github.com/ayannazm17/Predictive-Analytics-for-Business-Lending" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-      </article>
+          <article class="project-card" data-roles="data-science business">
+            <div class="project-head">
+              <h3 class="title">Needs-based B2B segmentation for BT Business</h3>
+              <div class="when">MSc dissertation</div>
+            </div>
+            <p class="result">Built a needs-based segmentation of BT Business's UK customers to replace targeting by size and sector, using a BT-commissioned survey of around 1,100 businesses. One of three linked dissertations.</p>
+            <ul>
+              <li>Reduced roughly 80 survey items to eight factor scores with block-wise factor analysis, after a single pooled analysis proved unsuitable.</li>
+              <li>Compared three clustering methods across nine candidate solutions and recommended a four-segment K-means solution. It held up when the weakest inputs were removed and when clustered on the raw items.</li>
+              <li>Segments differed significantly by firm size, sector and turnover although none entered the model. Added a decision-tree rule that assigns customers to segments with roughly three-quarters agreement (tested on the same sample) and function-level recommendations, with segment names left for BT to validate.</li>
+            </ul>
+            <div class="tech">R · Factor analysis · K-means · GMM · Hierarchical clustering</div>
+          </article>
 
-      <article class="project-card">
-        <div class="project-head">
-          <div class="title">2026 FIFA World Cup Analytics: Optimized Scheduling &amp; Group Formation</div>
-          <div class="when">2026</div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
-          <span class="tech-tag">Python</span><span class="tech-tag">Pyomo</span><span class="tech-tag">Integer Programming</span><span class="tech-tag">Prescriptive Analytics</span>
-        </div>
-        <p>
-          Redesigned the 48-team 2026 FIFA World Cup group stage and schedule using three integer programming models in Pyomo. Formulated a Max-Min Chebyshev objective to ensure group competitive balance, and solved stadium assignments with regulatory host-pinning constraints to maximize total match popularity across USA, Canada, and Mexico.
-        </p>
-        <div class="arch-diagram" role="img" aria-label="Methodology flow: Data Prep, Max-Min Group Formation, Letter Assignment, Stadium Allocation">Data Prep → Max-Min Group Formation → Letter Assignment → Stadium Allocation</div>
-        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-                    <a class="proj-btn" href="https://github.com/ayannazm17/2026-FIFA-World-Cup-Analytics-Group-Fixtures" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-      </article>
+          <article class="project-card" data-roles="analytics business">
+            <div class="project-head">
+              <h3 class="title">Internship platform: Project Manager Dashboard</h3>
+              <div class="when">Gillmore Centre, Warwick</div>
+            </div>
+            <p class="result">Replaced an email-driven internship recruitment process with a managed pipeline on Microsoft 365. The platform has five SharePoint lists, two automated flows, a five-stage status workflow and a full audit trail.</p>
+            <ul>
+              <li>Built the manager side: post and activate listings, review applicants, change status across five stages, email candidates and view the audit history.</li>
+              <li>Worked with a teammate who built the student dashboard and public portal, and connected both sides through shared SharePoint data.</li>
+              <li>Proposed next steps: automated status emails, Power BI funnel reporting and AI-based candidate matching (planned, not built).</li>
+            </ul>
+            <div class="tech">Power Apps · Power Automate · SharePoint · Microsoft Forms · Azure AD</div>
+            <div class="arch-diagram" role="img" aria-label="Pipeline: Microsoft Form, Power Automate, SharePoint lists, Power Apps manager dashboard, status audit log">Microsoft Form → Power Automate → SharePoint lists → Power Apps manager dashboard → status audit log</div>
+          </article>
 
-      <article class="project-card">
-        <div class="project-head">
-          <div class="title">Relational Database Architecture &amp; Analytics for Wealth Management</div>
-          <div class="when">2026</div>
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
-          <span class="tech-tag">SQL</span><span class="tech-tag">3NF</span><span class="tech-tag">Chen ERD</span><span class="tech-tag">Crow’s Foot</span><span class="tech-tag">ETL</span>
-        </div>
-        <p>
-          Designed and implemented an end-to-end 3NF relational database for a boutique UK wealth management firm. Developed conceptual (Chen) and logical (Crow’s Foot) Entity-Relationship diagrams. Executed complex SQL ETL pipelines to report on AUM growth waterfalls, branch-level unrealised gains, advisor portfolio risk metrics, and fee schedule revenue optimisation.
-        </p>
-        <div class="arch-diagram" role="img" aria-label="Architecture flow: Conceptual Chen, Logical Crow’s Foot, 3NF Schema, SQL ETL, AUM, Risk, and Revenue Reports">Conceptual (Chen) → Logical (Crow’s Foot) → 3NF Schema → SQL ETL → AUM · Risk · Revenue Reports</div>
-        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-                    <a class="proj-btn" href="https://github.com/ayannazm17/Wealth_Management_Database" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-      </article>
+      </div>
 
-      <article class="project-card">
-        <div class="project-head">
-          <div class="title">Runway to Rewards — WBS Business Challenge with The Emirates Group</div>
-          <div class="when">Apr – Jun 2026</div>
+      <div class="proj-group" data-group>
+        <div class="proj-grid">
+
+          <article class="project-card" data-roles="data-science">
+            <div class="project-head">
+              <h3 class="title">Predicting business credit applicants for Universal Plus</h3>
+            </div>
+            <p class="result">Logistic regression identified 77% of likely business-credit applicants (AUC 0.854) from 100,000 customers and 200 anonymised features.</p>
+            <ul>
+              <li>Benchmarked six classifiers in a CRISP-DM workflow, tested two preprocessing pipelines (with and without one feature that was 40% missing) and handled a 10/90 class imbalance with class weights instead of synthetic data.</li>
+              <li>Chose logistic regression over XGBoost (AUC 0.861) because XGBoost found only half of applicants (recall 0.50 vs 0.77) and missed applicants mean lost revenue. It is also easier to explain to regulators. Random Forest scored 90% accuracy but found no applicants.</li>
+              <li>Flagged 1,549 of 2,008 actual applicants on the test set. Proposed a relationship-manager dashboard pilot before wider rollout.</li>
+            </ul>
+            <div class="tech">Python · Logistic regression · XGBoost · LightGBM · CRISP-DM</div>
+            <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Predictive-Analytics-for-Business-Lending" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
+          </article>
+
+          <article class="project-card" data-roles="business analytics">
+            <div class="project-head">
+              <h3 class="title">PowerLease: revenue management model</h3>
+              <div class="when">Group project</div>
+            </div>
+            <p class="result">Reallocating a 300-generator fleet across 1, 4, 8 and 16-week rentals lifts modelled revenue by £466,430 (10%) with no price changes.</p>
+            <ul>
+              <li>Built a linear programme in Python that raises load factor from 73.4% to 79.1% and ROI from 5.17 to 5.69, cutting idle-capacity weeks from 39 to 11 of 52.</li>
+              <li>Proposed using its shadow prices (up to £672.70 per generator in week 37) as booking bid prices. A 16-week rental starting in week 24 earns £5,734 against £4,780 of opportunity cost, so it would be accepted.</li>
+              <li>Limits: one branch, a model-based projection, and no customer data to confirm the price-sensitivity assumptions.</li>
+            </ul>
+            <div class="tech">Python · Linear programming · Revenue management · Capacity allocation</div>
+          </article>
+
+          <article class="project-card" data-roles="business">
+            <div class="project-head">
+              <h3 class="title">Runway to Rewards: WBS x Emirates Group challenge</h3>
+              <div class="when">Team of 4 (led)</div>
+            </div>
+            <p class="result">Led a four-person team to first place among nine teams in a live Emirates Group challenge, winning a funded trip to Emirates HQ in Dubai.</p>
+            <ul>
+              <li>Entries were judged on how practically the concept could be implemented in Emirates' existing app.</li>
+              <li>Framed the '360-day gap' between flights for Gen Z Skywards members.</li>
+              <li>Proposed Runway to Rewards, a gamified micro-engagement concept built on the Hook Model, with a phased commercial rollout.</li>
+            </ul>
+            <div class="tech">Strategy · Hook Model · Loyalty</div>
+          </article>
+
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
-          <span class="tech-tag">Business Strategy</span><span class="tech-tag">Hook Model</span><span class="tech-tag">Gen Z</span><span class="tech-tag">Loyalty</span>
+      </div>
+
+      <button type="button" class="more-toggle" id="moreToggle" aria-expanded="false" aria-controls="moreWork">More work <span class="more-count"></span></button>
+
+      <div class="proj-group" id="moreWork" data-group hidden>
+        <div class="proj-grid">
+
+          <article class="project-card" data-roles="analytics business">
+            <div class="project-head">
+              <h3 class="title">Wealth management database</h3>
+              <div class="when">Group project (6), MSc case study, fictional firm and synthetic data</div>
+            </div>
+            <p class="result">Implemented a 14-table MySQL database and generated the synthetic dataset behind a team analysis of £967M AUM, up from £452M.</p>
+            <ul>
+              <li>Built the schema with primary and foreign keys, CHECK and UNIQUE constraints and a rule linking client status to closure date, normalised to 3NF.</li>
+              <li>Wrote the generation specifications for 1,000 clients, 25 advisors and a year of daily account snapshots, with asset prices simulated using geometric Brownian motion.</li>
+              <li>The team's analysis found every advisor with a £100M target missed it, and that 2025 added 46 net clients but lost £572K of AUM through churn. Synthetic data, so the findings are illustrative.</li>
+            </ul>
+            <div class="tech">SQL · MySQL · 3NF · Data generation</div>
+            <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Wealth_Management_Database" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
+          </article>
+
+          <article class="project-card" data-roles="data-science">
+            <div class="project-head">
+              <h3 class="title">Hybrid RAG for World Bank reports</h3>
+            </div>
+            <p class="result">Hybrid retrieval, reranking and query rewriting raised retrieval relevance from 0.70 to 0.84 across ten World Development Reports (2016 to 2025). LLM-judge scores for the answers did not improve.</p>
+            <ul>
+              <li>Indexed 4,589 chunks from 2,854 pages. Fused FAISS and BM25 results with Reciprocal Rank Fusion, reranked the top 20 with a cross-encoder to a top 5 and rewrote queries with HyDE.</li>
+              <li>Tested both pipelines on 10 queries of four types. Relevance improved on four and was unchanged on the rest. For a question about the 2016 report, the baseline returned no 2016 chunks, while the enhanced pipeline returned four of five.</li>
+              <li>Judge scores (1 to 5): correctness 4.5 for both, completeness 4.9 vs 4.8, grounding 3.8 vs 3.3. The judge saw only a truncated excerpt of the context, so I treat the grounding result as unreliable and would rerun it with the full context.</li>
+            </ul>
+            <div class="tech">Python · FAISS · BM25 · Cross-encoder · HyDE · Gemini</div>
+            <div class="arch-diagram" role="img" aria-label="Pipeline: World Bank PDFs, chunking, dense FAISS plus sparse BM25 retrieval, RRF, cross-encoder, LLM">World Bank PDFs → Chunking → Dense (FAISS) + Sparse (BM25) → RRF → Cross-encoder → LLM</div>
+            <p class="caption">Relevance is a keyword-overlap heuristic.</p>
+            <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Hybrid-RAG-System-for-the-World-Bank-World-Development-Reports" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
+          </article>
+
+          <article class="project-card" data-roles="data-science business">
+            <div class="project-head">
+              <h3 class="title">2026 World Cup scheduling</h3>
+              <div class="when">Group project (5)</div>
+            </div>
+            <p class="result">An integer-programming model cut the strength gap between World Cup groups to 87 FIFA points, against 500 in the confirmed groups of the official draw.</p>
+            <ul>
+              <li>Adapted the Ghoniem et al. (2017) model from 32 to 48 teams in Pyomo: 12 balanced groups under a max-min objective, with confederation caps and three co-hosts in Pot 1, solved to a 0.8% optimality gap.</li>
+              <li>Assigned groups to letters and stadiums with two further models and host-pinning rules, sending the most popular fixture set (score 20.0) to the 72,766-seat New York New Jersey stadium.</li>
+              <li>Limit: only six of the twelve official groups were confirmed when the comparison was made.</li>
+            </ul>
+            <div class="tech">Python · Pyomo · Integer programming</div>
+            <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/2026-FIFA-World-Cup-Analytics-Group-Fixtures" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
+          </article>
+
         </div>
-        <p>
-          Collaborated with Emirates Group executives on a live business challenge; led a 4-person winning team that earned a funded trip to Emirates HQ in Dubai. Designed <em>Runway to Rewards</em>, a gamified Skywards loyalty concept addressing the "360-day gap" between flights for Gen Z audiences using Nir Eyal’s Hook Model, daily micro-engagements, and a phased commercial rollout.
-        </p>
-        <div class="arch-diagram" role="img" aria-label="Framework: Emirates Challenge 1st Place, Hook Model, Gen Z Loyalty, Gamified Micro-engagements">Emirates Challenge · 1st Place · Hook Model · Gen Z Loyalty · Gamified Micro-engagements</div>
-        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-        </div>
-      </article>
+      </div>
     </section>
 
     <!-- 06 · Contact -->
     <section id="contact" aria-labelledby="contact-h">
       <header class="sec-head">
-        <div class="sec-eyebrow">06 — Get in touch</div>
-        <h2 class="sec-title" id="contact-h">Open to data, analytics & consulting roles.</h2>
+        <div class="sec-eyebrow">06 · Get in touch</div>
+        <h2 class="sec-title" id="contact-h">Open to data, analytics and consulting roles.</h2>
       </header>
 
       <div class="cta">
-        <h3>If you're hiring for analytics, segmentation, or ERP-led automation — let's talk.</h3>
-        <p>Available for full-time roles and selective consulting. I respond quickly, and I bring receipts.</p>
+        <h3>If you're hiring for analytics, segmentation or FinTech automation, get in touch.</h3>
+        <p>Available for full-time roles.</p>
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;">
           <a class="btn" href="mailto:ayannazm2712@gmail.com">
             Email Ayan <span class="arrow" aria-hidden="true">→</span>
@@ -869,6 +943,41 @@ footer {
         }
       });
     }
+
+    // Project filter chips and the "More work" toggle
+    const chips = document.querySelectorAll('.filter-chip');
+    const cards = document.querySelectorAll('#projects .project-card');
+    const groups = document.querySelectorAll('#projects [data-group]');
+    const more = document.getElementById('moreWork');
+    const moreToggle = document.getElementById('moreToggle');
+    const moreCount = moreToggle.querySelector('.more-count');
+    const filterStatus = document.getElementById('filterStatus');
+
+    const applyFilter = (f) => {
+      let matches = 0;
+      cards.forEach(c => {
+        c.hidden = f !== 'all' && !c.dataset.roles.split(' ').includes(f);
+        if (!c.hidden) matches++;
+      });
+      groups.forEach(g => g.classList.toggle('is-empty', !g.querySelector('.project-card:not([hidden])')));
+      const inMore = more.querySelectorAll('.project-card:not([hidden])').length;
+      moreCount.textContent = '(' + inMore + ')';
+      moreToggle.hidden = inMore === 0;
+      filterStatus.textContent = f === 'all' ? '' : matches + ' of ' + cards.length + ' projects';
+    };
+
+    chips.forEach(chip => chip.addEventListener('click', () => {
+      chips.forEach(c => c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'));
+      applyFilter(chip.dataset.filter);
+    }));
+
+    moreToggle.addEventListener('click', () => {
+      const open = moreToggle.getAttribute('aria-expanded') === 'true';
+      moreToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+      more.hidden = open;
+    });
+
+    applyFilter('all');
   })();
 </script>
 
