@@ -2,6 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google Analytics 4: skipped on localhost / file:// so local dev isn't tracked -->
+<script>
+  (function () {
+    var GA_ID = 'G-JSP3T1LDMK';
+    var h = location.hostname;
+    if (!h || h === 'localhost' || h === '127.0.0.1') return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  })();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ayan Nazm — Data Analyst &amp; Consultant</title>
 <meta name="description" content="Data analyst with nearly four years in B2B FinTech (HighRadius) and an MSc in Business Analytics from Warwick. SQL, Python, R, Power BI.">
@@ -524,6 +540,33 @@ section {
 .chart.anim rect.bar { transform: scaleY(0); transition: transform 700ms cubic-bezier(0.23, 1, 0.32, 1); }
 .chart.anim.in rect.bar { transform: scaleY(1); }
 
+/* ---------- Utility ---------- */
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* ---------- Credit-risk policy explorer (signature interactive) ---------- */
+.policy-toggle { margin-top: 1rem; padding: 1.25rem; border: 1px solid var(--rule-strong); background: var(--parchment); border-radius: 2px; display: flex; flex-direction: column; gap: 1.1rem; max-width: 560px; }
+.pt-switch { border: 0; padding: 0; margin: 0; min-width: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.pt-opt { position: relative; display: flex; flex-direction: column; gap: 0.1rem; padding: 0.6rem 0.9rem; border: 1px solid var(--rule-strong); border-radius: 2px; cursor: pointer; background: var(--parchment-2); transition: border-color 160ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 160ms cubic-bezier(0.23, 1, 0.32, 1); }
+.pt-opt input { position: absolute; opacity: 0; width: 1px; height: 1px; } /* hidden but focusable; label wraps it */
+.pt-opt-main { font-family: var(--display); font-size: 1.05rem; font-weight: 500; color: var(--ink); line-height: 1.1; }
+.pt-opt-sub { font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--slate); }
+.pt-opt.is-on { border-color: var(--prussian); box-shadow: inset 0 0 0 1px var(--prussian); }
+.pt-opt.is-on .pt-opt-main { color: var(--prussian); }
+.pt-opt:focus-within { outline: 2px solid var(--sienna); outline-offset: 2px; }
+@media (hover: hover) and (pointer: fine) { .pt-opt:hover { border-color: var(--sienna); } }
+.pt-readouts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+@media (max-width: 480px) { .pt-readouts { grid-template-columns: 1fr; gap: 0.5rem; } }
+.pt-stat { display: flex; flex-direction: column; gap: 0.15rem; padding-top: 0.5rem; border-top: 1px solid var(--rule); }
+.pt-k { font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--slate); }
+.pt-v { font-family: var(--mono); font-size: 1.35rem; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.pt-clusters { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.75rem; border-top: 1px solid var(--rule); }
+.pt-clusters-head { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sienna); font-weight: 600; }
+.pt-row { display: grid; grid-template-columns: 7.5rem 1fr auto; gap: 0.6rem; align-items: center; }
+.pt-cl { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.pt-bar { height: 0.5rem; background: var(--bone); border-radius: 2px; overflow: hidden; }
+.pt-bar > span { display: block; height: 100%; background: var(--prussian); border-radius: 2px; }
+.pt-amt { font-family: var(--mono); font-size: 0.72rem; color: var(--ink); font-variant-numeric: tabular-nums; text-align: right; }
+
 footer {
   border-top: 1px solid var(--rule);
   margin-top: 2rem; padding-top: 1.5rem;
@@ -749,6 +792,32 @@ footer {
             </ul>
             <div class="tech">Python · A/B testing · K-Means · Deep learning · SMOTE</div>
             <div class="chart" data-chart="credit"></div>
+            <div class="policy-toggle" aria-label="Lending policy explorer">
+              <fieldset class="pt-switch">
+                <legend class="visually-hidden">Select lending policy to compare</legend>
+                <label class="pt-opt is-on">
+                  <input type="radio" name="creditPolicy" value="a" checked>
+                  <span class="pt-opt-main">Conservative</span>
+                  <span class="pt-opt-sub">Policy A</span>
+                </label>
+                <label class="pt-opt">
+                  <input type="radio" name="creditPolicy" value="b">
+                  <span class="pt-opt-main">Aggressive</span>
+                  <span class="pt-opt-sub">Policy B</span>
+                </label>
+              </fieldset>
+              <div class="pt-readouts" aria-live="polite">
+                <div class="pt-stat"><span class="pt-k">Approval rate</span><span class="pt-v" data-stat="approval">65.7%</span></div>
+                <div class="pt-stat"><span class="pt-k">Default rate</span><span class="pt-v" data-stat="default">12.8%</span></div>
+                <div class="pt-stat"><span class="pt-k">Profit / application</span><span class="pt-v" data-stat="profit">Baseline</span></div>
+              </div>
+              <div class="pt-clusters" data-clusters hidden>
+                <div class="pt-clusters-head">Policy B profit / application by borrower cluster</div>
+                <div class="pt-row"><span class="pt-cl">Cluster 1 · 38.6%</span><span class="pt-bar" aria-hidden="true"><span style="width:38.6%"></span></span><span class="pt-amt">£1,344.30</span></div>
+                <div class="pt-row"><span class="pt-cl">Cluster 2 · 57.4%</span><span class="pt-bar" aria-hidden="true"><span style="width:57.4%"></span></span><span class="pt-amt">£151.80</span></div>
+                <div class="pt-row"><span class="pt-cl">Cluster 3 · 3.99%</span><span class="pt-bar" aria-hidden="true"><span style="width:3.99%"></span></span><span class="pt-amt">profitable @ 17.6%</span></div>
+              </div>
+            </div>
             <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Credit-Risk-Analytics" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
           </article>
 
@@ -1124,6 +1193,104 @@ footer {
       containers.forEach(el => obs.observe(el));
     } else {
       containers.forEach(draw);
+    }
+  })();
+</script>
+
+<script>
+  // Phase 2 — credit-risk policy explorer (radio-group so keyboard works
+  // natively); Phase 3 — impact-ribbon count-up on scroll. Both honour
+  // prefers-reduced-motion by jumping straight to final values.
+  (function () {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const easeOut = p => 1 - Math.pow(1 - p, 3);
+
+    // ---- Phase 2: policy explorer ----
+    const pt = document.querySelector('.policy-toggle');
+    if (pt) {
+      const DATA = {
+        a: { approval: 65.74, def: 12.79, profit: null },   // only the +£298 delta is known
+        b: { approval: 95.36, def: 16.05, profit: 298 }
+      };
+      const approvalEl = pt.querySelector('[data-stat="approval"]');
+      const defaultEl  = pt.querySelector('[data-stat="default"]');
+      const profitEl   = pt.querySelector('[data-stat="profit"]');
+      const clusters   = pt.querySelector('[data-clusters]');
+      const labels     = pt.querySelectorAll('.pt-opt');
+      const radios     = pt.querySelectorAll('input[name="creditPolicy"]');
+      const pct = v => v.toFixed(1) + '%';
+      const gbp = v => '+£' + Math.round(v);
+      const anim = new Map();
+
+      function animate(el, to, fmt) {
+        const prev = anim.get(el);
+        if (prev && prev.raf) cancelAnimationFrame(prev.raf);
+        const from = prev ? prev.cur : to;
+        if (reduce) { el.textContent = fmt(to); anim.set(el, { cur: to, raf: 0 }); return; }
+        const t0 = performance.now(), dur = 600, state = { cur: from, raf: 0 };
+        anim.set(el, state);
+        (function frame(now) {
+          const p = Math.min(1, (now - t0) / dur), v = from + (to - from) * easeOut(p);
+          state.cur = v; el.textContent = fmt(v);
+          if (p < 1) state.raf = requestAnimationFrame(frame);
+          else { state.cur = to; el.textContent = fmt(to); }
+        })(t0);
+      }
+
+      function setPolicy(p) {
+        const d = DATA[p];
+        animate(approvalEl, d.approval, pct);
+        animate(defaultEl, d.def, pct);
+        if (d.profit == null) {
+          const prev = anim.get(profitEl);
+          if (prev && prev.raf) cancelAnimationFrame(prev.raf);
+          anim.delete(profitEl);
+          profitEl.textContent = 'Baseline';
+        } else {
+          anim.set(profitEl, { cur: 0, raf: 0 }); // count up from zero to the delta
+          animate(profitEl, d.profit, gbp);
+        }
+        clusters.hidden = (p !== 'b');
+        labels.forEach(l => l.classList.toggle('is-on', l.querySelector('input').value === p));
+      }
+
+      radios.forEach(r => r.addEventListener('change', () => { if (r.checked) setPolicy(r.value); }));
+
+      // Initial state — reflect the checked radio with no animation.
+      const init = [...radios].find(r => r.checked) || radios[0];
+      const d0 = DATA[init.value];
+      approvalEl.textContent = pct(d0.approval); anim.set(approvalEl, { cur: d0.approval, raf: 0 });
+      defaultEl.textContent = pct(d0.def);       anim.set(defaultEl, { cur: d0.def, raf: 0 });
+      profitEl.textContent = d0.profit == null ? 'Baseline' : gbp(d0.profit);
+      clusters.hidden = (init.value !== 'b');
+      labels.forEach(l => l.classList.toggle('is-on', l.querySelector('input').value === init.value));
+    }
+
+    // ---- Phase 3: impact-ribbon count-up ----
+    const vals = document.querySelectorAll('.impact-ribbon .metric .val');
+    const numeric = [...vals].map(el => {
+      const m = el.textContent.trim().match(/^(\d+)(.*)$/);
+      return m ? { el, target: parseInt(m[1], 10), suffix: m[2] } : null;
+    }).filter(Boolean);
+
+    if (numeric.length && !reduce && 'IntersectionObserver' in window) {
+      const ribbon = document.querySelector('.impact-ribbon');
+      const obs = new IntersectionObserver((entries, o) => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          o.unobserve(e.target);
+          numeric.forEach(n => {
+            const t0 = performance.now(), dur = 900;
+            (function frame(now) {
+              const p = Math.min(1, (now - t0) / dur);
+              n.el.textContent = Math.round(n.target * easeOut(p)) + n.suffix;
+              if (p < 1) requestAnimationFrame(frame);
+              else n.el.textContent = n.target + n.suffix;
+            })(t0);
+          });
+        });
+      }, { threshold: 0.4 });
+      obs.observe(ribbon);
     }
   })();
 </script>
