@@ -567,6 +567,14 @@ section {
 .pt-bar > span { display: block; height: 100%; background: var(--prussian); border-radius: 2px; }
 .pt-amt { font-family: var(--mono); font-size: 0.72rem; color: var(--ink); font-variant-numeric: tabular-nums; text-align: right; }
 
+/* ---------- Architecture flow diagrams (inline SVG, themed via CSS vars) ---------- */
+.flow { margin-top: 0.75rem; max-width: 640px; }
+.flow svg { width: 100%; height: auto; display: block; overflow: visible; }
+.flow .node { fill: var(--parchment-2); stroke: var(--prussian); stroke-width: 1; }
+.flow .node-t { fill: var(--ink); font-family: var(--mono); font-size: 10px; }
+.flow .edge { stroke: var(--slate); stroke-width: 1.5; }
+.flow .edge-h { fill: var(--slate); }
+
 footer {
   border-top: 1px solid var(--rule);
   margin-top: 2rem; padding-top: 1.5rem;
@@ -833,7 +841,26 @@ footer {
               <li>Proposed next steps: automated status emails, Power BI funnel reporting and AI-based candidate matching (planned, not built).</li>
             </ul>
             <div class="tech">Power Apps · Power Automate · SharePoint · Microsoft Forms · Azure AD</div>
-            <div class="arch-diagram" role="img" aria-label="Pipeline: Microsoft Form, Power Automate, SharePoint lists, Power Apps manager dashboard, status audit log">Microsoft Form → Power Automate → SharePoint lists → Power Apps manager dashboard → status audit log</div>
+            <div class="flow" role="img" aria-label="Pipeline: Microsoft Form, then Power Automate, then SharePoint lists, then the Power Apps manager dashboard, then the status audit log.">
+              <svg viewBox="0 0 676 96" preserveAspectRatio="xMidYMid meet">
+                <defs><marker id="arrowA" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" class="edge-h"/></marker></defs>
+                <line class="edge" x1="120" y1="48" x2="140" y2="48" marker-end="url(#arrowA)"/>
+                <line class="edge" x1="258" y1="48" x2="278" y2="48" marker-end="url(#arrowA)"/>
+                <line class="edge" x1="396" y1="48" x2="416" y2="48" marker-end="url(#arrowA)"/>
+                <line class="edge" x1="534" y1="48" x2="554" y2="48" marker-end="url(#arrowA)"/>
+                <rect class="node" x="4" y="24" width="116" height="48" rx="3"/>
+                <text class="node-t" x="62" y="48" text-anchor="middle" dominant-baseline="central">Microsoft Form</text>
+                <rect class="node" x="142" y="24" width="116" height="48" rx="3"/>
+                <text class="node-t" x="200" y="48" text-anchor="middle" dominant-baseline="central">Power Automate</text>
+                <rect class="node" x="280" y="24" width="116" height="48" rx="3"/>
+                <text class="node-t" x="338" y="48" text-anchor="middle" dominant-baseline="central">SharePoint lists</text>
+                <rect class="node" x="418" y="24" width="116" height="48" rx="3"/>
+                <text class="node-t" x="476" y="42" text-anchor="middle">Power Apps</text>
+                <text class="node-t" x="476" y="58" text-anchor="middle">dashboard</text>
+                <rect class="node" x="556" y="24" width="116" height="48" rx="3"/>
+                <text class="node-t" x="614" y="48" text-anchor="middle" dominant-baseline="central">Status audit log</text>
+              </svg>
+            </div>
           </article>
 
         </div>
@@ -920,7 +947,33 @@ footer {
             </ul>
             <div class="tech">Python · FAISS · BM25 · Cross-encoder · HyDE · Gemini</div>
             <div class="chart" data-chart="rag"></div>
-            <div class="arch-diagram" role="img" aria-label="Pipeline: World Bank PDFs, chunking, dense FAISS plus sparse BM25 retrieval, RRF, cross-encoder, LLM">World Bank PDFs → Chunking → Dense (FAISS) + Sparse (BM25) → RRF → Cross-encoder → LLM</div>
+            <div class="flow" role="img" aria-label="Pipeline: World Bank PDFs, then chunking, then dense FAISS and sparse BM25 retrieval in parallel, merged by RRF, then a cross-encoder reranker, then the LLM.">
+              <svg viewBox="0 0 668 128" preserveAspectRatio="xMidYMid meet">
+                <defs><marker id="arrowR" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" class="edge-h"/></marker></defs>
+                <line class="edge" x1="100" y1="64" x2="116" y2="64" marker-end="url(#arrowR)"/>
+                <line class="edge" x1="212" y1="64" x2="228" y2="42" marker-end="url(#arrowR)"/>
+                <line class="edge" x1="212" y1="64" x2="228" y2="90" marker-end="url(#arrowR)"/>
+                <line class="edge" x1="324" y1="40" x2="340" y2="62" marker-end="url(#arrowR)"/>
+                <line class="edge" x1="324" y1="92" x2="340" y2="66" marker-end="url(#arrowR)"/>
+                <line class="edge" x1="436" y1="64" x2="452" y2="64" marker-end="url(#arrowR)"/>
+                <line class="edge" x1="548" y1="64" x2="564" y2="64" marker-end="url(#arrowR)"/>
+                <rect class="node" x="6" y="44" width="94" height="40" rx="3"/>
+                <text class="node-t" x="53" y="59" text-anchor="middle">World Bank</text>
+                <text class="node-t" x="53" y="72" text-anchor="middle">PDFs</text>
+                <rect class="node" x="118" y="44" width="94" height="40" rx="3"/>
+                <text class="node-t" x="165" y="64" text-anchor="middle" dominant-baseline="central">Chunking</text>
+                <rect class="node" x="230" y="20" width="94" height="40" rx="3"/>
+                <text class="node-t" x="277" y="40" text-anchor="middle" dominant-baseline="central">Dense · FAISS</text>
+                <rect class="node" x="230" y="72" width="94" height="40" rx="3"/>
+                <text class="node-t" x="277" y="92" text-anchor="middle" dominant-baseline="central">Sparse · BM25</text>
+                <rect class="node" x="342" y="44" width="94" height="40" rx="3"/>
+                <text class="node-t" x="389" y="64" text-anchor="middle" dominant-baseline="central">RRF</text>
+                <rect class="node" x="454" y="44" width="94" height="40" rx="3"/>
+                <text class="node-t" x="501" y="64" text-anchor="middle" dominant-baseline="central">Cross-encoder</text>
+                <rect class="node" x="566" y="44" width="94" height="40" rx="3"/>
+                <text class="node-t" x="613" y="64" text-anchor="middle" dominant-baseline="central">LLM</text>
+              </svg>
+            </div>
             <p class="caption">Relevance is a keyword-overlap heuristic.</p>
             <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Hybrid-RAG-System-for-the-World-Bank-World-Development-Reports" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
           </article>
