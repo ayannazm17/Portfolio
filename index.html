@@ -503,6 +503,27 @@ section {
 
 .arch-diagram { margin-top: 0.75rem; padding: 1rem; border: 1px dashed var(--rule); background: var(--parchment); display: flex; align-items: center; justify-content: center; min-height: 6rem; font-family: var(--mono); font-size: 0.75rem; color: var(--slate); letter-spacing: 0.05em; text-align: center; }
 
+/* ---------- Project mini-charts (hand-rolled inline SVG, themed via CSS vars) ---------- */
+.chart { margin-top: 1rem; }
+.chart figure { margin: 0; display: flex; flex-direction: column; gap: 0.25rem; max-width: 460px; }
+.chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart .c-legend { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--slate); margin-bottom: 0.35rem; }
+.chart .c-legend .key { display: inline-flex; align-items: center; gap: 0.4rem; }
+.chart .c-legend .sw { width: 0.7rem; height: 0.7rem; border-radius: 2px; flex-shrink: 0; }
+.chart .sw.c-s1 { background: var(--prussian); }
+.chart .sw.c-s2 { background: var(--sienna); }
+.chart rect.c-s1 { fill: var(--prussian); }
+.chart rect.c-s2 { fill: var(--sienna); }
+.chart text.c-val { fill: var(--ink); font-family: var(--mono); font-size: 10px; font-weight: 600; }
+.chart text.c-metric { fill: var(--slate); font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.04em; }
+.chart line.c-axis { stroke: var(--rule-strong); stroke-width: 1; }
+.chart .c-delta { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-soft); margin-top: 0.4rem; letter-spacing: 0.02em; line-height: 1.4; }
+.chart .c-delta strong { color: var(--sienna); font-weight: 600; }
+.chart figcaption { font-family: var(--mono); font-size: 0.68rem; color: var(--slate); margin-top: 0.4rem; line-height: 1.4; }
+.chart rect.bar { transform-box: fill-box; transform-origin: 50% 100%; }
+.chart.anim rect.bar { transform: scaleY(0); transition: transform 700ms cubic-bezier(0.23, 1, 0.32, 1); }
+.chart.anim.in rect.bar { transform: scaleY(1); }
+
 footer {
   border-top: 1px solid var(--rule);
   margin-top: 2rem; padding-top: 1.5rem;
@@ -727,6 +748,7 @@ footer {
               <li>Recommended a segmented, hybrid policy, with reject inference and a live pilot before rollout. Results are correlational because the data holds approved loans only.</li>
             </ul>
             <div class="tech">Python · A/B testing · K-Means · Deep learning · SMOTE</div>
+            <div class="chart" data-chart="credit"></div>
             <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Credit-Risk-Analytics" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
           </article>
 
@@ -776,6 +798,7 @@ footer {
               <li>Limits: one branch, a model-based projection, and no customer data to confirm the price-sensitivity assumptions.</li>
             </ul>
             <div class="tech">Python · Linear programming · Revenue management · Capacity allocation</div>
+            <div class="chart" data-chart="powerlease"></div>
           </article>
 
           <article class="project-card" data-roles="business">
@@ -812,6 +835,7 @@ footer {
               <li>The team's analysis found every advisor with a £100M target missed it, and that 2025 added 46 net clients but lost £572K of AUM through churn. Synthetic data, so the findings are illustrative.</li>
             </ul>
             <div class="tech">SQL · MySQL · 3NF · Data generation</div>
+            <div class="chart" data-chart="wealth"></div>
             <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Wealth_Management_Database" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
           </article>
 
@@ -826,6 +850,7 @@ footer {
               <li>Judge scores (1 to 5): correctness 4.5 for both, completeness 4.9 vs 4.8, grounding 3.8 vs 3.1. The judge saw only a truncated excerpt of the context, so I treat the grounding result as unreliable and would rerun it with the full context.</li>
             </ul>
             <div class="tech">Python · FAISS · BM25 · Cross-encoder · HyDE · Gemini</div>
+            <div class="chart" data-chart="rag"></div>
             <div class="arch-diagram" role="img" aria-label="Pipeline: World Bank PDFs, chunking, dense FAISS plus sparse BM25 retrieval, RRF, cross-encoder, LLM">World Bank PDFs → Chunking → Dense (FAISS) + Sparse (BM25) → RRF → Cross-encoder → LLM</div>
             <p class="caption">Relevance is a keyword-overlap heuristic.</p>
             <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Hybrid-RAG-System-for-the-World-Bank-World-Development-Reports" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
@@ -985,6 +1010,121 @@ footer {
     });
 
     applyFilter('all');
+  })();
+</script>
+
+<script>
+  // Project mini-charts — hand-rolled inline SVG, themed entirely via CSS
+  // custom properties, so a dark/light toggle recolours them with no JS.
+  // Rendered lazily (only when a card scrolls near the viewport); bars grow
+  // in on reveal unless prefers-reduced-motion is set, in which case they
+  // appear at full height immediately.
+  (function () {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const CHARTS = {
+      credit: {
+        series: ['Policy A · Conservative', 'Policy B · Aggressive'],
+        max: 100,
+        metrics: [
+          { name: 'Approval rate', a: { v: 65.74, t: '65.7%' }, b: { v: 95.36, t: '95.4%' } },
+          { name: 'Default rate',  a: { v: 12.79, t: '12.8%' }, b: { v: 16.05, t: '16.1%' } }
+        ],
+        delta: 'Profit / application: <strong>+£298</strong> (Policy B vs A)',
+        caption: 'Model ROC-AUC 0.68 vs cluster-average baseline 0.50.',
+        aria: 'Grouped bar chart. Approval rate: Policy A 65.7 percent, Policy B 95.4 percent. Default rate: Policy A 12.8 percent, Policy B 16.1 percent.'
+      },
+      powerlease: {
+        series: ['Actual', 'Optimised'],
+        max: null,
+        metrics: [
+          { name: 'Revenue',     a: { v: 4650479, t: '£4.65M' }, b: { v: 5116909, t: '£5.12M' } },
+          { name: 'Load factor', a: { v: 73.38, t: '73.4%' },   b: { v: 79.12, t: '79.1%' } },
+          { name: 'ROI',         a: { v: 5.17, t: '5.17' },     b: { v: 5.69, t: '5.69' } },
+          { name: 'Idle wks',    a: { v: 39, t: '39' },         b: { v: 11, t: '11' } }
+        ],
+        delta: 'Revenue <strong>+£466,430 (+10%)</strong> · idle weeks 39 → 11 of 52 (fewer is better)',
+        caption: 'Model-based projection, one branch, no price changes. Bars scaled per metric.',
+        aria: 'Grouped bar chart, Actual versus Optimised. Revenue 4.65 million to 5.12 million pounds. Load factor 73.4 to 79.1 percent. ROI 5.17 to 5.69. Idle weeks 39 to 11 of 52.'
+      },
+      wealth: {
+        series: ['Jan 2025', 'Dec 2025'],
+        max: null,
+        metrics: [
+          { name: 'AUM', a: { v: 452, t: '£452M' }, b: { v: 967, t: '£967M' } }
+        ],
+        delta: 'Assets under management <strong>+113.7%</strong> year on year · synthetic data',
+        caption: 'Synthetic data, illustrative. Only the two endpoints are reliable.',
+        aria: 'Bar chart. Assets under management 452 million pounds in January 2025, 967 million in December 2025, up 113.7 percent.'
+      },
+      rag: {
+        series: ['Baseline', 'Enhanced'],
+        max: null,
+        metrics: [
+          { name: 'Relevance',    a: { v: 0.70, t: '0.70' }, b: { v: 0.84, t: '0.84' } },
+          { name: 'Correctness',  a: { v: 4.5, t: '4.5' },   b: { v: 4.5, t: '4.5' } },
+          { name: 'Completeness', a: { v: 4.9, t: '4.9' },   b: { v: 4.8, t: '4.8' } },
+          { name: 'Grounding',    a: { v: 3.8, t: '3.8' },   b: { v: 3.1, t: '3.1' } }
+        ],
+        caption: 'Judge scores are 1–5; relevance is 0–1 (keyword-overlap heuristic). Grounding fell because the judge saw only a truncated context excerpt.',
+        aria: 'Grouped bar chart, Baseline versus Enhanced. Retrieval relevance 0.70 to 0.84. Correctness 4.5 and 4.5. Completeness 4.9 to 4.8. Grounding 3.8 to 3.1.'
+      }
+    };
+
+    function render(container, cfg) {
+      const W = 320, H = 180, padT = 22, padB = 30, padL = 6, padR = 6;
+      const plotW = W - padL - padR, plotH = H - padT - padB, baseY = padT + plotH;
+      const groupW = plotW / cfg.metrics.length;
+      const barW = Math.min(34, groupW * 0.3);
+      const gap = Math.max(4, barW * 0.3);
+      let bars = '', labels = '', i = 0;
+      cfg.metrics.forEach((m, gi) => {
+        const mMax = cfg.max != null ? cfg.max : Math.max(m.a.v, m.b ? m.b.v : 0);
+        const cx = padL + groupW * gi + groupW / 2;
+        [['a', 'c-s1', cx - gap / 2 - barW], ['b', 'c-s2', cx + gap / 2]].forEach(([k, cls, x]) => {
+          const d = m[k];
+          if (!d) return;
+          const h = mMax ? (d.v / mMax) * plotH : 0;
+          const y = baseY - h;
+          bars += '<rect class="bar ' + cls + '" x="' + x.toFixed(1) + '" y="' + y.toFixed(1) +
+            '" width="' + barW.toFixed(1) + '" height="' + h.toFixed(1) +
+            '" rx="1.5" style="transition-delay:' + (i * 90) + 'ms"/>';
+          labels += '<text class="c-val" x="' + (x + barW / 2).toFixed(1) + '" y="' + (y - 5).toFixed(1) +
+            '" text-anchor="middle">' + d.t + '</text>';
+          i++;
+        });
+        labels += '<text class="c-metric" x="' + cx.toFixed(1) + '" y="' + (baseY + 14).toFixed(1) +
+          '" text-anchor="middle">' + m.name + '</text>';
+      });
+      const svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + cfg.aria +
+        '" preserveAspectRatio="xMidYMid meet"><line class="c-axis" x1="' + padL + '" y1="' + baseY +
+        '" x2="' + (W - padR) + '" y2="' + baseY + '"/>' + bars + labels + '</svg>';
+      const legend = '<div class="c-legend">' + cfg.series.map((s, idx) =>
+        '<span class="key"><span class="sw c-s' + (idx + 1) + '"></span>' + s + '</span>').join('') + '</div>';
+      const delta = cfg.delta ? '<div class="c-delta">' + cfg.delta + '</div>' : '';
+      const cap = cfg.caption ? '<figcaption>' + cfg.caption + '</figcaption>' : '';
+      container.innerHTML = '<figure>' + legend + svg + delta + cap + '</figure>';
+    }
+
+    const draw = (el) => {
+      const cfg = CHARTS[el.dataset.chart];
+      if (!cfg) return;
+      render(el, cfg);
+      if (!reduce) {
+        el.classList.add('anim');
+        requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('in')));
+      }
+    };
+
+    const containers = document.querySelectorAll('[data-chart]');
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries, o) => {
+        entries.forEach(e => { if (e.isIntersecting) { draw(e.target); o.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -40px 0px', threshold: 0.1 });
+      containers.forEach(el => obs.observe(el));
+    } else {
+      containers.forEach(draw);
+    }
   })();
 </script>
 
