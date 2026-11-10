@@ -335,13 +335,10 @@
       });
     }
 
-    // Project filter chips and the "More work" toggle
+    // Project filter chips (all cards shown; no fold)
     const chips = document.querySelectorAll('.filter-chip');
     const cards = document.querySelectorAll('#projects .project-card');
     const groups = document.querySelectorAll('#projects [data-group]');
-    const more = document.getElementById('moreWork');
-    const moreToggle = document.getElementById('moreToggle');
-    const moreCount = moreToggle.querySelector('.more-count');
     const filterStatus = document.getElementById('filterStatus');
 
     const applyFilter = (f) => {
@@ -351,9 +348,6 @@
         if (!c.hidden) matches++;
       });
       groups.forEach(g => g.classList.toggle('is-empty', !g.querySelector('.project-card:not([hidden])')));
-      const inMore = more.querySelectorAll('.project-card:not([hidden])').length;
-      moreCount.textContent = '(' + inMore + ')';
-      moreToggle.hidden = inMore === 0;
       filterStatus.textContent = f === 'all' ? '' : matches + ' of ' + cards.length + ' projects';
     };
 
@@ -361,12 +355,6 @@
       chips.forEach(c => c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'));
       applyFilter(chip.dataset.filter);
     }));
-
-    moreToggle.addEventListener('click', () => {
-      const open = moreToggle.getAttribute('aria-expanded') === 'true';
-      moreToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
-      more.hidden = open;
-    });
 
     applyFilter('all');
   })();
