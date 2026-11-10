@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ayannazm17.github.io/Portfolio/sitemap.xml
