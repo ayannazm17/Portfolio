@@ -575,6 +575,69 @@ section {
 .flow .edge { stroke: var(--slate); stroke-width: 1.5; }
 .flow .edge-h { fill: var(--slate); }
 
+/* ---------- Case-study modal (native <dialog>: focus-trap + Escape for free) ---------- */
+.cs-btn { margin-top: 0.75rem; align-self: flex-start; display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.45rem 0.85rem; border: 1px solid var(--rule-strong); background: var(--parchment); color: var(--ink-soft); cursor: pointer; transition: border-color 160ms cubic-bezier(0.23, 1, 0.32, 1), color 160ms cubic-bezier(0.23, 1, 0.32, 1); }
+.cs-btn:hover { border-color: var(--sienna); color: var(--ink); }
+.cs-btn:focus-visible { outline: 2px solid var(--sienna); outline-offset: 3px; }
+dialog.cs-modal { width: min(680px, 92vw); max-height: 86vh; padding: 0; border: 1px solid var(--rule-strong); border-radius: 3px; background: var(--parchment); color: var(--ink); box-shadow: 0 20px 60px rgba(14, 17, 22, 0.3); overflow: hidden; }
+dialog.cs-modal::backdrop { background: rgba(14, 17, 22, 0.55); }
+.cs-inner { display: flex; flex-direction: column; max-height: 86vh; }
+.cs-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1.5rem 1.5rem 1rem; border-bottom: 1px solid var(--rule); }
+.cs-head h3 { font-family: var(--display); font-weight: 500; font-size: 1.4rem; line-height: 1.2; color: var(--ink); letter-spacing: -0.01em; }
+.cs-close { flex-shrink: 0; width: 2rem; height: 2rem; display: grid; place-items: center; border: 1px solid var(--rule-strong); background: var(--parchment-2); color: var(--ink); border-radius: 50%; cursor: pointer; font-size: 0.9rem; line-height: 1; transition: border-color 160ms, color 160ms; }
+.cs-close:hover { border-color: var(--sienna); color: var(--sienna); }
+.cs-close:focus-visible { outline: 2px solid var(--sienna); outline-offset: 2px; }
+.cs-body { padding: 1.25rem 1.5rem 1.75rem; overflow-y: auto; }
+.cs-sec { margin-bottom: 1.25rem; }
+.cs-q { font-family: var(--mono); font-size: 0.62rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--sienna); margin-bottom: 0.4rem; }
+.cs-sec p { font-family: var(--body); font-size: 0.97rem; line-height: 1.55; color: var(--ink-soft); }
+.cs-sec ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; margin: 0; }
+.cs-sec li { font-family: var(--body); font-size: 0.97rem; line-height: 1.55; color: var(--ink-soft); padding-left: 1.25rem; position: relative; }
+.cs-sec li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 0.7rem; height: 1px; background: var(--bone-2); }
+.cs-todo { margin-top: 1.25rem; padding: 0.75rem 1rem; border: 1px dashed var(--rule-strong); border-radius: 2px; font-family: var(--mono); font-size: 0.72rem; color: var(--slate); background: var(--parchment-2); line-height: 1.5; }
+.cs-todo strong { color: var(--sienna); }
+@media (prefers-reduced-motion: no-preference) {
+  dialog.cs-modal[open] { animation: csIn 200ms cubic-bezier(0.23, 1, 0.32, 1); }
+  @keyframes csIn { from { opacity: 0; transform: translateY(8px) scale(0.99); } to { opacity: 1; transform: none; } }
+}
+
+/* ---------- Print (clean PDF; interactive chrome hidden) ---------- */
+@media print {
+  .theme-toggle, .rail-nav, .rail hr, .filter-chips, .filter-status, .more-toggle, .cs-btn, .scroll-progress, .cmdk, .copy-btn, .policy-toggle { display: none !important; }
+  body { background: #fff !important; color: #000; font-size: 11pt; }
+  .shell { display: block; max-width: 100%; padding: 0; }
+  .rail { position: static !important; max-width: 100%; margin-bottom: 1.5rem; }
+  .main { gap: 1.5rem; }
+  #moreWork[hidden], .project-card[hidden] { display: flex !important; }
+  .proj-group.is-empty { display: flex !important; }
+  .proj-grid, .proj-grid--featured { display: block; }
+  .project-card { border: 1px solid #bbb; box-shadow: none !important; transform: none !important; margin-bottom: 0.75rem; break-inside: avoid; page-break-inside: avoid; }
+  section, .chart, .flow { break-inside: avoid; }
+  a { color: #000; text-decoration: underline; }
+}
+
+/* ---------- Scroll-progress bar ---------- */
+.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 200; background: linear-gradient(90deg, var(--prussian), var(--sienna)); transition: width 80ms linear; }
+
+/* ---------- Copy-to-clipboard email ---------- */
+.copy-btn { background: none; border: 0; cursor: pointer; color: var(--slate-2); padding: 0 0 0 0.4rem; font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; line-height: 1; }
+.copy-btn:hover { color: var(--sienna); }
+.copy-btn:focus-visible { outline: 2px solid var(--sienna); outline-offset: 2px; border-radius: 2px; }
+.copy-btn.copied { color: var(--prussian); }
+
+/* ---------- Command palette (native <dialog>) ---------- */
+dialog.cmdk { width: min(560px, 92vw); margin-top: 12vh; padding: 0; border: 1px solid var(--rule-strong); border-radius: 4px; background: var(--parchment); color: var(--ink); box-shadow: 0 24px 70px rgba(14, 17, 22, 0.35); overflow: hidden; }
+dialog.cmdk::backdrop { background: rgba(14, 17, 22, 0.5); }
+.cmdk-input { width: 100%; box-sizing: border-box; border: 0; border-bottom: 1px solid var(--rule); background: transparent; color: var(--ink); font-family: var(--body); font-size: 1.05rem; padding: 1rem 1.25rem; outline: none; }
+.cmdk-input::placeholder { color: var(--slate-2); }
+.cmdk-list { list-style: none; margin: 0; padding: 0.4rem; max-height: 50vh; overflow-y: auto; }
+.cmdk-opt { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0.85rem; border-radius: 3px; cursor: pointer; font-family: var(--body); font-size: 0.95rem; color: var(--ink-soft); }
+.cmdk-opt .cmdk-ico { font-family: var(--mono); font-size: 0.7rem; color: var(--slate-2); width: 1.5rem; text-align: center; flex-shrink: 0; }
+.cmdk-opt .cmdk-hint { margin-left: auto; font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--slate-2); }
+.cmdk-opt[aria-selected="true"] { background: var(--parchment-2); color: var(--ink); }
+.cmdk-opt[aria-selected="true"] .cmdk-ico { color: var(--sienna); }
+.cmdk-empty { padding: 0.85rem; font-family: var(--mono); font-size: 0.75rem; color: var(--slate); text-align: center; }
+
 footer {
   border-top: 1px solid var(--rule);
   margin-top: 2rem; padding-top: 1.5rem;
@@ -585,6 +648,8 @@ footer {
 </style>
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -620,7 +685,7 @@ footer {
 
     <div class="contact-list" aria-label="Contact details">
       <div class="row"><span class="k">Based</span><span class="v">United Kingdom</span></div>
-      <div class="row"><span class="k">Email</span><a class="v" href="mailto:ayannazm2712@gmail.com">ayannazm2712@gmail.com</a></div>
+      <div class="row"><span class="k">Email</span><a class="v" href="mailto:ayannazm2712@gmail.com">ayannazm2712@gmail.com</a><button type="button" class="copy-btn" data-copy="ayannazm2712@gmail.com" aria-label="Copy email address to clipboard">Copy</button></div>
       <div class="row"><span class="k">In</span><a class="v" href="https://www.linkedin.com/in/ayannazm" target="_blank" rel="noopener">LinkedIn</a></div>
       <div class="row"><span class="k">Git</span><a class="v" href="https://github.com/ayannazm17" target="_blank" rel="noopener">GitHub</a></div>
     </div>
@@ -826,6 +891,7 @@ footer {
                 <div class="pt-row"><span class="pt-cl">Cluster 3 · 3.99%</span><span class="pt-bar" aria-hidden="true"><span style="width:3.99%"></span></span><span class="pt-amt">profitable @ 17.6%</span></div>
               </div>
             </div>
+            <button type="button" class="cs-btn" data-case="credit">Read the full case study <span aria-hidden="true">→</span></button>
             <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Credit-Risk-Analytics" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
           </article>
 
@@ -861,6 +927,7 @@ footer {
                 <text class="node-t" x="614" y="48" text-anchor="middle" dominant-baseline="central">Status audit log</text>
               </svg>
             </div>
+            <button type="button" class="cs-btn" data-case="internship">Read the full case study <span aria-hidden="true">→</span></button>
           </article>
 
         </div>
@@ -880,6 +947,7 @@ footer {
               <li>Flagged 1,549 of 2,008 actual applicants on the test set. Proposed a relationship-manager dashboard pilot before wider rollout.</li>
             </ul>
             <div class="tech">Python · Logistic regression · XGBoost · LightGBM · CRISP-DM</div>
+            <button type="button" class="cs-btn" data-case="universal">Read the full case study <span aria-hidden="true">→</span></button>
             <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Predictive-Analytics-for-Business-Lending" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
           </article>
 
@@ -895,6 +963,7 @@ footer {
             </ul>
             <div class="tech">Python · Linear programming · Revenue management · Capacity allocation</div>
             <div class="chart" data-chart="powerlease"></div>
+            <button type="button" class="cs-btn" data-case="powerlease">Read the full case study <span aria-hidden="true">→</span></button>
           </article>
 
           <article class="project-card" data-roles="business">
@@ -909,6 +978,7 @@ footer {
               <li>Proposed Runway to Rewards, a gamified micro-engagement concept built on the Hook Model, with a phased commercial rollout.</li>
             </ul>
             <div class="tech">Strategy · Hook Model · Loyalty</div>
+            <button type="button" class="cs-btn" data-case="emirates">Read the full case study <span aria-hidden="true">→</span></button>
           </article>
 
         </div>
@@ -932,6 +1002,7 @@ footer {
             </ul>
             <div class="tech">SQL · MySQL · 3NF · Data generation</div>
             <div class="chart" data-chart="wealth"></div>
+            <button type="button" class="cs-btn" data-case="wealth">Read the full case study <span aria-hidden="true">→</span></button>
             <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Wealth_Management_Database" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
           </article>
 
@@ -975,6 +1046,7 @@ footer {
               </svg>
             </div>
             <p class="caption">Relevance is a keyword-overlap heuristic.</p>
+            <button type="button" class="cs-btn" data-case="rag">Read the full case study <span aria-hidden="true">→</span></button>
             <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/Hybrid-RAG-System-for-the-World-Bank-World-Development-Reports" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
           </article>
 
@@ -989,6 +1061,7 @@ footer {
               <li>Limit: only six of the twelve official groups were confirmed when the comparison was made.</li>
             </ul>
             <div class="tech">Python · Pyomo · Integer programming</div>
+            <button type="button" class="cs-btn" data-case="worldcup">Read the full case study <span aria-hidden="true">→</span></button>
             <div class="proj-links"><a class="proj-btn" href="https://github.com/ayannazm17/2026-FIFA-World-Cup-Analytics-Group-Fixtures" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
           </article>
 
@@ -1025,6 +1098,288 @@ footer {
 
   </main>
 </div>
+
+<dialog class="cmdk" id="cmdk" aria-label="Command palette">
+  <input type="text" class="cmdk-input" id="cmdkInput" placeholder="Jump to a section, or type a command…" role="combobox" aria-expanded="true" aria-controls="cmdkList" aria-autocomplete="list" autocomplete="off" spellcheck="false">
+  <ul class="cmdk-list" id="cmdkList" role="listbox" aria-label="Commands"></ul>
+</dialog>
+
+<dialog class="cs-modal" id="caseModal" aria-labelledby="csTitle">
+  <div class="cs-inner">
+    <div class="cs-head">
+      <h3 id="csTitle"></h3>
+      <button type="button" class="cs-close" id="csClose" aria-label="Close case study">✕</button>
+    </div>
+    <div class="cs-body" id="csBody"></div>
+  </div>
+</dialog>
+
+<script>
+  // Phase 6 — case-study modal. Native <dialog> gives focus-trap, Escape and
+  // focus-restore for free. Content is structured Question / Method / Result /
+  // Caveat from each card's existing claims only, with a TODO where more detail
+  // is needed — no new claims invented.
+  (function () {
+    const modal = document.getElementById('caseModal');
+    if (!modal || typeof modal.showModal !== 'function') return;
+    const titleEl = document.getElementById('csTitle');
+    const bodyEl = document.getElementById('csBody');
+    const closeBtn = document.getElementById('csClose');
+
+    const CASES = {
+      credit: {
+        title: "Credit risk: lending policy A/B test",
+        q: "Does an aggressive lending policy out-earn a conservative one, and where does the extra profit come from?",
+        method: [
+          "Simulated both policies on LendingClub loan data and tested the profit gap with a Welch t-test (p < 0.001).",
+          "Segmented borrowers with K-Means on 11 features (k = 3) to see where the gap came from.",
+          "Built a neural-network default model and compared it against a cluster-average baseline on 8,417 unseen loans."
+        ],
+        result: [
+          "The aggressive policy earned £298 more profit per application despite a 3.3-point higher default rate (16.05% vs 12.79%).",
+          "It won in every cluster — by £521.60 per application in the highest-risk one.",
+          "The model reached ROC-AUC 0.68 where the baseline had no within-segment discrimination (AUC 0.50)."
+        ],
+        caveat: "Results are correlational because the data holds approved loans only. I recommended reject inference and a live pilot before rollout.",
+        todo: "Add the full per-cluster profit table and the exact Policy A / Policy B rule definitions."
+      },
+      internship: {
+        title: "Internship platform: Project Manager Dashboard",
+        q: "Can an email-driven internship recruitment process be replaced with a managed pipeline on existing Microsoft 365 licences?",
+        method: [
+          "Built the manager side in Power Apps: post and activate listings, review applicants, move them through five status stages, email candidates and view the audit history.",
+          "Modelled the data across five SharePoint lists and automated the flow with two Power Automate flows.",
+          "Added role-based access that checks the signed-in Warwick account against a staff list."
+        ],
+        result: [
+          "Replaced the email process with a five-stage pipeline and a full, timestamped audit trail, inside existing licences at no extra cost.",
+          "A teammate built the student dashboard and public portal; both sides connect through shared SharePoint data."
+        ],
+        caveat: "Automated status emails, Power BI funnel reporting and AI-based candidate matching were proposed but not built.",
+        todo: "Add dashboard screenshots and the SharePoint list schema."
+      },
+      universal: {
+        title: "Predicting business credit applicants for Universal Plus",
+        q: "Which of 100,000 customers are likely to apply for business credit, from 200 anonymised features?",
+        method: [
+          "Benchmarked six classifiers in a CRISP-DM workflow.",
+          "Tested two preprocessing pipelines — with and without one feature that was 40% missing.",
+          "Handled a 10/90 class imbalance with class weights rather than synthetic data."
+        ],
+        result: [
+          "Logistic regression identified 77% of likely applicants (AUC 0.854), flagging 1,549 of 2,008 actual applicants on the test set.",
+          "Chosen over XGBoost (AUC 0.861) because XGBoost found only half of applicants (recall 0.50 vs 0.77) and is harder to explain to regulators.",
+          "Random Forest scored 90% accuracy but found no applicants at all."
+        ],
+        caveat: "A relationship-manager dashboard pilot was proposed before wider rollout.",
+        todo: "Add the cost-of-missed-applicant assumptions behind the recall-over-precision choice."
+      },
+      powerlease: {
+        title: "PowerLease: revenue management model",
+        q: "Can reallocating a fixed generator fleet across rental lengths raise revenue with no price changes?",
+        method: [
+          "Built a linear programme in Python over a 300-generator fleet across 1, 4, 8 and 16-week rentals.",
+          "Proposed the model's shadow prices (up to £672.70 per generator in week 37) as booking bid prices."
+        ],
+        result: [
+          "Modelled revenue rose £466,430 (+10%) with no price changes.",
+          "Load factor rose 73.4% to 79.1%, ROI 5.17 to 5.69, and idle-capacity weeks fell from 39 to 11 of 52.",
+          "A 16-week rental starting in week 24 earns £5,734 against £4,780 of opportunity cost, so it would be accepted."
+        ],
+        caveat: "One branch, a model-based projection, and no customer data to confirm the price-sensitivity assumptions.",
+        todo: "Add the price-sensitivity analysis."
+      },
+      emirates: {
+        title: "Runway to Rewards: WBS x Emirates Group challenge",
+        q: "How do you re-engage Gen Z Skywards members during the roughly 360-day gap between flights?",
+        method: [
+          "Led a four-person team and framed the engagement gap.",
+          "Designed Runway to Rewards, a gamified micro-engagement concept built on the Hook Model, with a phased commercial rollout.",
+          "Entries were judged on how practically the concept could be implemented in Emirates' existing app."
+        ],
+        result: [
+          "First place among nine teams in a live Emirates Group challenge.",
+          "Won a funded trip to Emirates HQ in Dubai."
+        ],
+        caveat: "Concept stage — not built or piloted.",
+        todo: "Add the rollout phases and the engagement metrics the concept would be measured on."
+      },
+      wealth: {
+        title: "Wealth management database",
+        q: "Can a normalised database and synthetic dataset support a wealth-management analysis of AUM and advisor performance?",
+        method: [
+          "Built a 14-table MySQL schema with primary and foreign keys, CHECK and UNIQUE constraints and a status-to-closure rule, normalised to 3NF.",
+          "Wrote generation specs for 1,000 clients, 25 advisors and a year of daily account snapshots, with asset prices simulated by geometric Brownian motion."
+        ],
+        result: [
+          "Supported a team analysis of £967M AUM, up from £452M.",
+          "Found every advisor with a £100M target missed it, and that 2025 added 46 net clients but lost £572K of AUM through churn."
+        ],
+        caveat: "Synthetic data, so the findings are illustrative.",
+        todo: "Add the ER diagram and the full data-generation parameters."
+      },
+      rag: {
+        title: "Hybrid RAG for World Bank reports",
+        q: "Does hybrid retrieval with reranking and query rewriting beat a baseline RAG on the World Development Reports?",
+        method: [
+          "Indexed 4,589 chunks from 2,854 pages across ten reports (2016 to 2025).",
+          "Fused FAISS and BM25 with Reciprocal Rank Fusion, reranked the top 20 with a cross-encoder to a top 5, and rewrote queries with HyDE.",
+          "Tested both pipelines on 10 queries of four types and scored answers with an LLM judge."
+        ],
+        result: [
+          "Retrieval relevance rose 0.70 to 0.84; for a 2016-report question the baseline returned no 2016 chunks while the enhanced pipeline returned four of five.",
+          "Judge scores: correctness 4.5 for both, completeness 4.9 vs 4.8."
+        ],
+        caveat: "Grounding fell 3.8 to 3.1, but the judge saw only a truncated context excerpt, so I treat that as unreliable. Relevance is a keyword-overlap heuristic.",
+        todo: "Rerun the judge with the full context and re-measure grounding."
+      },
+      worldcup: {
+        title: "2026 World Cup scheduling",
+        q: "Can an integer-programming model draw more balanced World Cup groups than the official draw?",
+        method: [
+          "Adapted the Ghoniem et al. (2017) model from 32 to 48 teams in Pyomo: 12 groups under a max-min objective, with confederation caps and three co-hosts in Pot 1, solved to a 0.8% optimality gap.",
+          "Assigned groups to letters and stadiums with two further models and host-pinning rules."
+        ],
+        result: [
+          "Cut the strength gap between groups to 87 FIFA points, against 500 in the confirmed groups of the official draw.",
+          "Sent the most popular fixture set (score 20.0) to the 72,766-seat New York New Jersey stadium."
+        ],
+        caveat: "Only six of the twelve official groups were confirmed when the comparison was made.",
+        todo: "Refresh the comparison once the full official draw is final."
+      }
+    };
+
+    const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const list = items => '<ul>' + items.map(i => '<li>' + esc(i) + '</li>').join('') + '</ul>';
+    const sec = (q, inner) => '<div class="cs-sec"><div class="cs-q">' + q + '</div>' + inner + '</div>';
+
+    function open(key) {
+      const c = CASES[key];
+      if (!c) return;
+      titleEl.textContent = c.title;
+      bodyEl.innerHTML =
+        sec('Question', '<p>' + esc(c.q) + '</p>') +
+        sec('Method', list(c.method)) +
+        sec('Result', list(c.result)) +
+        sec('Caveat', '<p>' + esc(c.caveat) + '</p>') +
+        '<div class="cs-todo"><strong>TODO</strong> — ' + esc(c.todo) + '</div>';
+      modal.showModal();
+      bodyEl.scrollTop = 0;
+    }
+
+    document.querySelectorAll('.cs-btn[data-case]').forEach(b =>
+      b.addEventListener('click', () => open(b.dataset.case)));
+    closeBtn.addEventListener('click', () => modal.close());
+    modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
+  })();
+</script>
+
+<script>
+  // Phase 7 — scroll-progress bar, copy-to-clipboard email, and a command
+  // palette (Cmd/Ctrl-K). The palette is a native <dialog> (focus-trap +
+  // Escape for free) with a listbox the arrow keys drive.
+  (function () {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Scroll-progress bar
+    const bar = document.getElementById('scrollProgress');
+    if (bar) {
+      const update = () => {
+        const h = document.documentElement;
+        const max = h.scrollHeight - h.clientHeight;
+        bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+      };
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+    }
+
+    // Copy-to-clipboard email
+    document.querySelectorAll('.copy-btn[data-copy]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(btn.dataset.copy); }
+        catch (e) { return; }
+        const prev = btn.textContent;
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = prev; btn.classList.remove('copied'); }, 1500);
+      });
+    });
+
+    // Command palette
+    const dlg = document.getElementById('cmdk');
+    if (!dlg || typeof dlg.showModal !== 'function') return;
+    const input = document.getElementById('cmdkInput');
+    const listEl = document.getElementById('cmdkList');
+    const scrollTo = id => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    };
+    const COMMANDS = [
+      { label: 'Summary', hint: 'Go', ico: '01', run: () => scrollTo('summary') },
+      { label: 'Education', hint: 'Go', ico: '02', run: () => scrollTo('education') },
+      { label: 'Skills', hint: 'Go', ico: '03', run: () => scrollTo('skills') },
+      { label: 'Experience', hint: 'Go', ico: '04', run: () => scrollTo('experience') },
+      { label: 'Projects', hint: 'Go', ico: '05', run: () => scrollTo('projects') },
+      { label: 'Contact', hint: 'Go', ico: '06', run: () => scrollTo('contact') },
+      { label: 'Toggle theme', hint: 'Action', ico: '◐', run: () => document.getElementById('themeToggle').click() },
+      { label: 'Open GitHub', hint: 'Link', ico: '↗', run: () => window.open('https://github.com/ayannazm17', '_blank', 'noopener') },
+      { label: 'Email Ayan', hint: 'Link', ico: '✉', run: () => { window.location.href = 'mailto:ayannazm2712@gmail.com'; } }
+    ];
+    let filtered = COMMANDS.slice(), active = 0;
+
+    function render() {
+      listEl.innerHTML = filtered.length
+        ? filtered.map((c, i) =>
+            '<li class="cmdk-opt" role="option" id="cmdk-opt-' + i + '" aria-selected="' + (i === active) + '">' +
+            '<span class="cmdk-ico" aria-hidden="true">' + c.ico + '</span>' + c.label +
+            '<span class="cmdk-hint">' + c.hint + '</span></li>').join('')
+        : '<li class="cmdk-empty">No matches</li>';
+      input.setAttribute('aria-activedescendant', filtered.length ? 'cmdk-opt-' + active : '');
+      [...listEl.querySelectorAll('.cmdk-opt')].forEach((li, i) => {
+        li.addEventListener('mousemove', () => { if (active !== i) { active = i; paint(); } });
+        li.addEventListener('click', () => choose(i));
+      });
+    }
+    function paint() {
+      [...listEl.querySelectorAll('.cmdk-opt')].forEach((li, i) => {
+        li.setAttribute('aria-selected', i === active);
+        if (i === active) { input.setAttribute('aria-activedescendant', 'cmdk-opt-' + i); li.scrollIntoView({ block: 'nearest' }); }
+      });
+    }
+    function filter() {
+      const q = input.value.trim().toLowerCase();
+      filtered = q ? COMMANDS.filter(c => c.label.toLowerCase().includes(q)) : COMMANDS.slice();
+      active = 0;
+      render();
+    }
+    function choose(i) {
+      const c = filtered[i];
+      if (!c) return;
+      dlg.close();
+      c.run();
+    }
+    function openPalette() {
+      input.value = '';
+      filtered = COMMANDS.slice();
+      active = 0;
+      render();
+      dlg.showModal();
+      input.focus();
+    }
+
+    input.addEventListener('input', filter);
+    input.addEventListener('keydown', e => {
+      if (e.key === 'ArrowDown') { e.preventDefault(); if (filtered.length) { active = (active + 1) % filtered.length; paint(); } }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); if (filtered.length) { active = (active - 1 + filtered.length) % filtered.length; paint(); } }
+      else if (e.key === 'Enter') { e.preventDefault(); choose(active); }
+    });
+    dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+    window.addEventListener('keydown', e => {
+      if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) { e.preventDefault(); openPalette(); }
+    });
+  })();
+</script>
 
 <script>
   // Theme toggle with persistence and dynamic SVG icon switching
