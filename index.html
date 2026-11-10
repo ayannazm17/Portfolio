@@ -644,6 +644,11 @@ dialog.cmdk::backdrop { background: rgba(14, 17, 22, 0.5); }
 .cmdk-opt[aria-selected="true"] .cmdk-ico { color: var(--sienna); }
 .cmdk-empty { padding: 0.85rem; font-family: var(--mono); font-size: 0.75rem; color: var(--slate); text-align: center; }
 
+/* ---------- Live GitHub repo stats ---------- */
+.gh-stats { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-left: 0.25rem; font-family: var(--mono); font-size: 0.65rem; color: var(--slate); letter-spacing: 0.02em; }
+.gh-stats .gh-item { display: inline-flex; align-items: center; gap: 0.3rem; }
+.gh-stats .gh-dot { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--prussian); display: inline-block; }
+
 footer {
   border-top: 1px solid var(--rule);
   margin-top: 2rem; padding-top: 1.5rem;
@@ -1706,6 +1711,55 @@ footer {
       }, { threshold: 0.4 });
       obs.observe(ribbon);
     }
+  })();
+</script>
+
+<script>
+  // Phase 9 — live GitHub repo stats on each project that links to a repo.
+  // Unauthenticated REST API, cached in localStorage for 3 hours to respect
+  // the 60/hr rate limit. Fails silently (element stays hidden) on any error.
+  (function () {
+    const links = document.querySelectorAll('#projects .proj-links a.proj-btn[href*="github.com/"]');
+    if (!links.length) return;
+    const TTL = 3 * 60 * 60 * 1000;
+    const fmtDate = iso => {
+      try { return new Date(iso).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }); }
+      catch (e) { return ''; }
+    };
+    links.forEach(a => {
+      const m = a.getAttribute('href').match(/github\.com\/([^/]+)\/([^/?#]+)/);
+      if (!m) return;
+      const owner = m[1], repo = m[2], key = 'gh:' + owner + '/' + repo;
+      const span = document.createElement('span');
+      span.className = 'gh-stats';
+      span.hidden = true;
+      a.parentNode.appendChild(span);
+
+      const paint = d => {
+        if (!d) return;
+        const parts = ['<span class="gh-item" title="Stars">★ ' + (d.stargazers_count || 0) + '</span>'];
+        if (d.language) parts.push('<span class="gh-item"><span class="gh-dot" aria-hidden="true"></span>' + d.language + '</span>');
+        if (d.pushed_at) parts.push('<span class="gh-item">Updated ' + fmtDate(d.pushed_at) + '</span>');
+        span.innerHTML = parts.join('');
+        span.hidden = false;
+      };
+
+      let cached = null;
+      try {
+        const raw = localStorage.getItem(key);
+        if (raw) { const o = JSON.parse(raw); if (Date.now() - o.t < TTL) cached = o.d; }
+      } catch (e) {}
+      if (cached) { paint(cached); return; }
+
+      fetch('https://api.github.com/repos/' + owner + '/' + repo, { headers: { 'Accept': 'application/vnd.github+json' } })
+        .then(r => r.ok ? r.json() : Promise.reject(r.status))
+        .then(d => {
+          const slim = { stargazers_count: d.stargazers_count, language: d.language, pushed_at: d.pushed_at };
+          try { localStorage.setItem(key, JSON.stringify({ t: Date.now(), d: slim })); } catch (e) {}
+          paint(slim);
+        })
+        .catch(() => { /* unreachable or rate-limited: leave hidden */ });
+    });
   })();
 </script>
 
