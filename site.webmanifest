@@ -1,0 +1,13 @@
+{
+  "name": "Ayan Nazm — Data Analyst & Consultant",
+  "short_name": "Ayan Nazm",
+  "description": "Data analyst with nearly four years in B2B FinTech and an MSc in Business Analytics from Warwick.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F2EB",
+  "theme_color": "#1B3A5C",
+  "icons": [
+    { "src": "favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" }
+  ]
+}
