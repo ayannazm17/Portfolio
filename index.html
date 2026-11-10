@@ -24,6 +24,7 @@
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F2EB">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E1116">
+<link rel="preload" as="image" href="assets/ayan-nazm.webp" fetchpriority="high">
 <!-- TODO (favicon PNG fallbacks): SVG favicons cover modern browsers; for older ones and iOS home-screen, rasterise favicon.svg to favicon-32.png / favicon-180.png and add <link rel="apple-touch-icon" href="favicon-180.png"> plus a 32px icon entry in site.webmanifest. -->
 
 <meta name="description" content="Data analyst with nearly four years in B2B FinTech (HighRadius) and an MSc in Business Analytics from Warwick. SQL, Python, R, Power BI.">
@@ -526,7 +527,7 @@ section {
 .arch-diagram { margin-top: 0.75rem; padding: 1rem; border: 1px dashed var(--rule); background: var(--parchment); display: flex; align-items: center; justify-content: center; min-height: 6rem; font-family: var(--mono); font-size: 0.75rem; color: var(--slate); letter-spacing: 0.05em; text-align: center; }
 
 /* ---------- Project mini-charts (hand-rolled inline SVG, themed via CSS vars) ---------- */
-.chart { margin-top: 1rem; }
+.chart { margin-top: 1rem; min-height: 180px; } /* reserve space so lazy render doesn't shift layout (CLS) */
 .chart figure { margin: 0; display: flex; flex-direction: column; gap: 0.25rem; max-width: 460px; }
 .chart svg { width: 100%; height: auto; display: block; overflow: visible; }
 .chart .c-legend { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--slate); margin-bottom: 0.35rem; }
@@ -680,7 +681,7 @@ footer {
   <aside class="rail" aria-label="Site navigation and identity">
     <div class="brand">
       <div class="avatar-wrap">
-        <img src="assets/ayan-nazm.webp" alt="Portrait of Ayan Nazm" class="avatar" width="138" height="138"></div>
+        <img src="assets/ayan-nazm.webp" alt="Portrait of Ayan Nazm" class="avatar" width="138" height="138" decoding="async" fetchpriority="high"></div>
       <div class="monogram">Ayan Nazm</div>
       <div class="tagline">Data Analyst · Consultant</div>
     </div>
